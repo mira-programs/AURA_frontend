@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Aura</string>
+    <string name="welcome_msg">Welcome to</string>
+    <string name="open_page">AURA</string>
+    <string name="btn_login">Log in</string>
+    <string name="btn_register">Register</string>
+    <string name="signup_page">Sign Up</string>
+</resources>
