@@ -2,7 +2,14 @@
     <string name="app_name">Aura</string>
     <string name="welcome_msg">Welcome to</string>
     <string name="open_page">AURA</string>
-    <string name="btn_login">Log in</string>
+    <string name="btn_login">Login</string>
     <string name="btn_register">Register</string>
-    <string name="signup_page">Sign Up</string>
+
+    //login page components
+    <string name="etUsername">Username</string>
+    <string name="etPassword">Password</string>
+
+    //Register page components
+    <string name="etEmail">Email</string>
+    <string name="etConfirmPassword">Confirm Password</string>
 </resources>
