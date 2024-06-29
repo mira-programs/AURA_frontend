@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">Aura</string>
+    <string name="app_name">AURA</string>
     <string name="welcome_msg">Welcome to</string>
     <string name="open_page">AURA</string>
     <string name="btn_login">Login</string>
     <string name="btn_register">Register</string>
+    <string name="content_description">logo</string>
 
     //login page components
     <string name="etUsername">Username</string>

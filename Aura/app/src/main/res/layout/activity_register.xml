@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gradient"
     tools:context=".RegisterActivity">
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_marginTop="120dp"
         android:text="@string/btn_register"
         android:textSize="34sp"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,8 +28,12 @@
         android:ems="10"
         android:hint="@string/etEmail"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:layout_editor_absoluteX="100dp" />
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/editTextText4"
@@ -37,6 +43,9 @@
         android:ems="10"
         android:hint="@string/etUsername"
         android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="@+id/editTextText3"
         app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
 
@@ -48,6 +57,9 @@
         android:ems="10"
         android:hint="@string/etPassword"
         android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="@+id/editTextText4"
         app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
 
@@ -59,6 +71,9 @@
         android:ems="10"
         android:hint="@string/etConfirmPassword"
         android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="@color/white"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="@+id/editTextText5"
         app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
 
@@ -68,6 +83,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="@string/btn_register"
+        android:textColor="#DD2C00"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
