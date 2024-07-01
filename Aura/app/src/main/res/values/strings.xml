@@ -13,4 +13,5 @@
     //Register page components
     <string name="etEmail">Email</string>
     <string name="etConfirmPassword">Confirm Password</string>
+    <string name="forgot_password">Forgot Password?</string>
 </resources>
