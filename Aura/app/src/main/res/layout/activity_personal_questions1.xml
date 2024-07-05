@@ -9,7 +9,7 @@
         android:id="@+id/textViewSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:text="@string/signup"
         android:textSize="24sp"
         android:layout_gravity="center_horizontal"/>
 
@@ -17,7 +17,7 @@
         android:id="@+id/textViewQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="How old are you?"
+        android:text="@string/questionAge"
         android:textSize="18sp"
         android:layout_marginTop="24dp"/>
 
@@ -31,32 +31,32 @@
             android:id="@+id/radio_less_than_18"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Less than 18"/>
+            android:text="@string/ageOption1"/>
 
         <RadioButton
             android:id="@+id/radio_18_21"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="18-21"/>
+            android:text="@string/ageOption2"/>
 
         <RadioButton
             android:id="@+id/radio_22_26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="22-26"/>
+            android:text="@string/ageOption3"/>
 
         <RadioButton
             android:id="@+id/radio_more_than_27"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="More than 27"/>
+            android:text="@string/ageOption4"/>
     </RadioGroup>
 
     <Button
         android:id="@+id/buttonNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"
+        android:text="@string/btnNext"
         android:layout_marginTop="24dp"/>
 
 </LinearLayout>

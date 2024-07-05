@@ -4,6 +4,7 @@
     <string name="open_page">AURA</string>
     <string name="btn_login">Login</string>
     <string name="btn_register">Register</string>
+    <string name="signup">Sign up</string>
     <string name="content_description">logo</string>
 
     //login page components
@@ -14,4 +15,12 @@
     <string name="etEmail">Email</string>
     <string name="etConfirmPassword">Confirm Password</string>
     <string name="forgot_password">Forgot Password?</string>
+
+    //Personal questions 1 components
+    <string name="questionAge">How old are you?</string>
+    <string name="ageOption1">Less than 18</string>
+    <string name="ageOption2">18–21</string>
+    <string name="ageOption3">22–26</string>
+    <string name="ageOption4">More than 27</string>
+    <string name="btnNext">Next</string>
 </resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#CCCCCC"/> <!-- Use the desired inactive color -->
+    <corners android:radius="8dp"/> <!-- Half of the size (16dp) to create a circle -->
+    <size android:width="16dp" android:height="16dp"/> <!-- Adjust size as needed -->
+</shape>
