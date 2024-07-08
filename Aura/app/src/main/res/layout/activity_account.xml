@@ -42,34 +42,44 @@
         app:layout_constraintTop_toBottomOf="@id/account_username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        tools:ignore="ExtraText">
 
         <!-- Profile Icon -->
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_profile_account"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_background"
+            android:scaleType="fitCenter" />
+        <!-- xml file made in drawable -->
 
         <!-- Aura Points Icon -->
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_aurapoints_account"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_background"
+            android:scaleType="fitCenter" />
 
         <!-- Challenges Achieved Icon -->
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@drawable/ic_challengesachieved_account"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_background"
+            android:scaleType="fitCenter" />
 
         <!-- Saved Icon -->
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_saved_account" />
+            android:src="@drawable/ic_saved_account"
+            android:background="@drawable/button_background"
+            android:scaleType="fitCenter" />
     </LinearLayout>
 
     <!-- Settings List -->
@@ -85,100 +95,107 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:drawableLeft="@drawable/ic_settings"
+            android:drawableLeft="@drawable/ic_settings_account"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="Settings"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/button_background" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:drawableLeft="@drawable/ic_currency"
+            android:drawableLeft="@drawable/ic_privacy_account"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="Currency"
+            android:text="Privacy"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/button_background" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:drawableLeft="@drawable/ic_language"
+            android:drawableLeft="@drawable/ic_language_account"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="Language"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/button_background" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:drawableLeft="@drawable/ic_get_help"
+            android:drawableLeft="@drawable/ic_help_account"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="Get Help"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/button_background" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:drawableLeft="@drawable/ic_terms_conditions"
+            android:drawableLeft="@drawable/ic_termsandconditions_account"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="Terms and Conditions"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/button_background" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:drawableLeft="@drawable/ic_refer_friend"
+            android:drawableLeft="@drawable/ic_refertoafriend_account"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="Refer to a Friend"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/button_background" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:drawableLeft="@drawable/ic_faq"
+            android:drawableLeft="@drawable/ic_faq_account"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="FAQs"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/button_background" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:drawableLeft="@drawable/ic_about_aura"
+            android:drawableLeft="@drawable/ic_about_account"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="About AURA"
             android:textColor="#000000"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/button_background" />
     </LinearLayout>
 
     <!-- Log Out Button -->
 
     <!-- Bottom Navigation -->
 
-
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="444dp"
-        android:background="@drawable/border_gray"
+        android:layout_marginTop="436dp"
+        android:background="@drawable/button_background"
         android:gravity="center"
         android:text="Log out"
         android:textColor="#FF0040"
         app:layout_constraintTop_toBottomOf="@id/profile_icons_row"
-        tools:layout_editor_absoluteX="25dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -189,34 +206,30 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
-
-        <!-- NAVIGATION -->
-
-        <!-- Friends -->
+        <!-- Friends Button -->
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Friends"
-            android:src="@drawable/ic_friends" />
+            android:src="@drawable/ic_friends"
+            android:scaleType="fitCenter" />
 
-        <!-- Target -->
+        <!-- Center Target -->
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:src="@drawable/ic_target"
             android:contentDescription="Target"
-            android:src="@drawable/ic_target" />
+            android:scaleType="fitCenter" />
 
-        <!-- Account -->
+        <!-- Account Button -->
         <ImageButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Account"
-            android:src="@drawable/ic_account" />
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:src="@drawable/ic_account"
