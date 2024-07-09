@@ -61,7 +61,8 @@ public class AccountActivity extends AppCompatActivity {
         auraPointsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent (AccountActivity.this, AurapointsAccountActivity.class);
+                startActivity(intent);
             }
         });
 

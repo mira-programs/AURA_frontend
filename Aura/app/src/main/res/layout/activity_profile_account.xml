@@ -8,11 +8,13 @@
     tools:context=".ProfileAccountActivity">
 
     <!-- Header -->
+
+    <!-- Profile Title -->
     <TextView
         android:id="@+id/account_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="Account"
         android:textColor="#FF0040"
         android:textSize="24sp"
@@ -20,12 +22,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Profile Title -->
     <TextView
         android:id="@+id/profile_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="Profile"
         android:textColor="#FF0040"
         android:textSize="18sp"
