@@ -51,22 +51,22 @@
             android:layout_width="76dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/nothing"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_profile_account" />
         <!-- xml file made in drawable -->
 
         <!-- Aura Points Icon -->
-
-        <!-- Challenges Achieved Icon -->
         <ImageButton
             android:layout_width="78dp"
             android:layout_height="117dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/nothing"
+            android:text="Aura points"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_aurapoints_account" />
 
+        <!-- Challenges Achieved Icon -->
         <ImageButton
             android:layout_width="79dp"
             android:layout_height="match_parent"
