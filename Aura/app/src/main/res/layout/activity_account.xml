@@ -201,4 +201,6 @@
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Account"
-            android:src="@drawable/ic_account"
+            android:src="@drawable/ic_account"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
