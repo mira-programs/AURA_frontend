@@ -37,16 +37,22 @@
 
     <!-- Change Password Button -->
 
+    <!-- Delete Account Button -->
+
+    <!-- Sign Out Button -->
+
+    <!-- Bottom Navigation -->
+
     <LinearLayout
         android:layout_width="342dp"
         android:layout_height="289dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/profile_form_background"
+        android:background="@drawable/button_background"
         android:orientation="vertical"
         android:padding="16dp"
-        android:background="@drawable/button_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_title">
 
@@ -55,33 +61,33 @@
             android:id="@+id/first_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="First name"
             android:inputType="textPersonName"
-            android:text="Maria" />
+            android:textColor="#b0b0b0"
+            android:text="First name" />
 
         <EditText
             android:id="@+id/last_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Last name"
             android:inputType="textPersonName"
-            android:text="Eid" />
+            android:textColor="#b0b0b0"
+            android:text="Last name" />
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-mail"
             android:inputType="textEmailAddress"
-            android:text="mpe04@mail.aub.edu" />
+            android:textColor="#b0b0b0"
+            android:text="E-mail" />
 
         <EditText
             android:id="@+id/phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Phone number"
             android:inputType="phone"
-            android:text="+961 70 783 189" />
+            android:textColor="#b0b0b0"
+            android:text="Phone number" />
 
         <Button
             android:id="@+id/save_changes_button"
@@ -94,25 +100,48 @@
 
     </LinearLayout>
 
-    <!-- Delete Account Button -->
-
-    <!-- Sign Out Button -->
-
-    <!-- Bottom Navigation -->
-
     <Button
         android:id="@+id/sign_out_button"
-        android:layout_width="match_parent"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="564dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/button_background"
         android:gravity="center"
         android:text="Sign out"
         android:textColor="#FF0040"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/delete_account_button" />
+
+    <Button
+        android:id="@+id/delete_account_button"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button_background"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="Delete account"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/change_password_button" />
+
+    <Button
+        android:id="@+id/change_password_button"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="Change password"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="444dp" />
 
     <LinearLayout
         android:id="@+id/bottom_navigation"
@@ -156,32 +185,4 @@
             android:src="@drawable/ic_account" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/change_password_button"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/button_background"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        android:text="Change password"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="542dp" />
-
-    <Button
-        android:id="@+id/delete_account_button"
-        android:layout_width="340"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button_background"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        android:text="Delete account"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/change_password_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>
