@@ -71,7 +71,7 @@
             android:layout_width="79dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/button_background"
+            android:background="@drawable/nothing"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_challengesachieved_account" />
 
