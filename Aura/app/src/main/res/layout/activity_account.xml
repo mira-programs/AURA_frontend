@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_icon"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F0EBE3"
@@ -12,26 +13,26 @@
         android:id="@+id/account_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Account"
-        android:textSize="24sp"
         android:textColor="#FF0040"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Username -->
     <TextView
         android:id="@+id/account_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="MARIA EID"
-        android:textSize="18sp"
         android:textColor="#FF0040"
-        app:layout_constraintTop_toBottomOf="@id/account_header"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/account_header" />
 
     <!-- Profile Icons Row -->
     <LinearLayout
@@ -48,6 +49,7 @@
 
         <!-- Profile Icon -->
         <ImageButton
+            android:id="@+id/profile_icon"
             android:layout_width="76dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
@@ -58,16 +60,18 @@
 
         <!-- Aura Points Icon -->
         <ImageButton
+            android:id="@+id/aura_points_icon"
             android:layout_width="78dp"
             android:layout_height="117dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/nothing"
-            android:text="Aura points"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_aurapoints_account" />
+            android:src="@drawable/ic_aurapoints_account"
+            android:text="Aura points" />
 
         <!-- Challenges Achieved Icon -->
         <ImageButton
+            android:id="@+id/challenges_achieved_icon"
             android:layout_width="79dp"
             android:layout_height="match_parent"
             android:layout_marginEnd="16dp"
@@ -94,6 +98,7 @@
         tools:layout_editor_absoluteX="16dp">
 
         <Button
+            android:id="@+id/settings_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_background"
@@ -104,6 +109,7 @@
             android:textSize="16sp" />
 
         <Button
+            android:id="@+id/privacy_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_background"
@@ -114,6 +120,7 @@
             android:textSize="16sp" />
 
         <Button
+            android:id="@+id/language_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_background"
@@ -124,6 +131,7 @@
             android:textSize="16sp" />
 
         <Button
+            android:id="@+id/help_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_background"
@@ -134,6 +142,7 @@
             android:textSize="16sp" />
 
         <Button
+            android:id="@+id/terms_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_background"
@@ -144,6 +153,7 @@
             android:textSize="16sp" />
 
         <Button
+            android:id="@+id/about_button"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/button_background"
@@ -175,17 +185,17 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <!-- Friends Button -->
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Friends"
-            android:src="@drawable/ic_friends"
-            android:scaleType="fitCenter" />
+    <!-- Friends Button -->
+    <ImageButton
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Friends"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_friends" />
 
-        <!-- Center Target -->
+    <!-- Center Target -->
 
     <!-- Account Button -->
     <ImageView

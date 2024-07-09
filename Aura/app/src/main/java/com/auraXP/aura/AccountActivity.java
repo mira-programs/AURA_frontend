@@ -1,24 +1,144 @@
 package com.auraXP.aura;
 
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class AccountActivity extends AppCompatActivity {
+
+    private TextView accountHeader;
+    private TextView accountUsername;
+    private ImageButton profileIcon;
+    private ImageButton auraPointsIcon;
+    private ImageButton challengesAchievedIcon;
+    private Button settingsButton;
+    private Button privacyButton;
+    private Button languageButton;
+    private Button helpButton;
+    private Button termsButton;
+    private Button aboutButton;
+    private Button logoutButton;
+    private ImageButton friendsNav;
+    private ImageView centerNav;
+    private ImageButton accountNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_account);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        // Binding views
+        accountHeader = findViewById(R.id.account_header);
+        accountUsername = findViewById(R.id.account_username);
+        profileIcon = findViewById(R.id.profile_icon);
+        auraPointsIcon = findViewById(R.id.aura_points_icon);
+        challengesAchievedIcon = findViewById(R.id.challenges_achieved_icon);
+        settingsButton = findViewById(R.id.settings_button);
+        privacyButton = findViewById(R.id.privacy_button);
+        languageButton = findViewById(R.id.language_button);
+        helpButton = findViewById(R.id.help_button);
+        termsButton = findViewById(R.id.terms_button);
+        aboutButton = findViewById(R.id.about_button);
+        logoutButton = findViewById(R.id.btn_logout);
+        friendsNav = findViewById(R.id.friends_nav);
+        centerNav = findViewById(R.id.center_nav);
+        accountNav = findViewById(R.id.account_nav);
+
+        // Setting click listeners
+        profileIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        auraPointsIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        challengesAchievedIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        privacyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        languageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        helpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        termsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        aboutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        friendsNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        centerNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        accountNav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
         });
     }
 }
