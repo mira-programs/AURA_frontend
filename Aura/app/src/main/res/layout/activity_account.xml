@@ -90,7 +90,11 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< Updated upstream
         android:layout_marginTop="60dp"
+=======
+        android:layout_marginTop="40dp"
+>>>>>>> Stashed changes
         android:orientation="vertical"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
@@ -168,7 +172,11 @@
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< Updated upstream
         android:layout_marginTop="384dp"
+=======
+        android:layout_marginTop="372dp"
+>>>>>>> Stashed changes
         android:background="@drawable/button_background"
         android:gravity="center"
         android:text="Log out"
@@ -197,6 +205,7 @@
 
     <!-- Center Target -->
 
+<<<<<<< Updated upstream
     <!-- Account Button -->
     <ImageView
         android:layout_width="0dp"
@@ -219,3 +228,14 @@
         tools:layout_editor_absoluteY="-117dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+        <!-- Account Button -->
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Account"
+            android:src="@drawable/ic_account"
+
+>>>>>>> Stashed changes
