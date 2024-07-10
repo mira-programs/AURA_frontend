@@ -23,16 +23,4 @@
     <string name="ageOption3">22–26</string>
     <string name="ageOption4">More than 27</string>
     <string name="btnNext">Next</string>
-    <string name="skip_question">Skip this question</string>
-
-    //Accounts strings
-    <string name="btnSettings">Settings</string>
-    <string name="btnPrivacy">Privacy</string>
-    <string name="btnLanguages">Languages</string>
-    <string name="btnGetHelp">Get Help</string>
-    <string name="btnTerms">Terms and Conditions</string>
-    <string name="btnAboutAura">About Aura</string>
-    <string name="btnLogout">Log out</string>
-    <string name="btnFriends">Friends</string>
-    <string name="tvAccount">Account</string>
 </resources>

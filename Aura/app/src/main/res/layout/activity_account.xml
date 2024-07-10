@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/tvAccount"
+        android:text="Account"
         android:textColor="#FF0040"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,7 +52,6 @@
             android:layout_height="76dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/nothing"
-            android:contentDescription="@string/app_name"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_profile_account" />
 
@@ -63,7 +62,6 @@
             android:layout_height="76dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/nothing"
-            android:contentDescription="@string/app_name"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_aurapoints_account" />
 
@@ -74,7 +72,6 @@
             android:layout_height="76dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/nothing"
-            android:contentDescription="@string/app_name"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_challengesachieved_account" />
     </LinearLayout>
@@ -101,7 +98,7 @@
             android:background="@drawable/button_background"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="@string/btnSettings"
+            android:text="Settings"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -112,7 +109,7 @@
             android:background="@drawable/button_background"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="@string/btnPrivacy"
+            android:text="Privacy"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -123,7 +120,7 @@
             android:background="@drawable/button_background"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="@string/btnLanguages"
+            android:text="Language"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -134,7 +131,7 @@
             android:background="@drawable/button_background"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="@string/btnGetHelp"
+            android:text="Get Help"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -145,7 +142,7 @@
             android:background="@drawable/button_background"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="@string/btnTerms"
+            android:text="Terms and Conditions"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -168,7 +165,7 @@
         android:layout_marginTop="396dp"
         android:background="@drawable/button_background"
         android:gravity="center"
-        android:text="@string/btnLogout"
+        android:text="Log out"
         android:textColor="#FF0040"
         app:layout_constraintTop_toBottomOf="@id/profile_icons_row"
         tools:layout_editor_absoluteX="0dp" />
@@ -188,7 +185,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="@string/btnFriends"
+            android:contentDescription="Friends"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_friends" />
 

@@ -1,7 +1,0 @@
-<!-- res/values/styles.xml -->
-<resources>
-    <style name="CustomRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
-        <item name="android:button">@drawable/custom_radiobutton</item>
-        <item name="android:textColor">@color/orange</item>
-    </style>
-</resources>
