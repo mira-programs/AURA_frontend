@@ -9,7 +9,6 @@
         tools:context=".MainActivity">
 
         <!-- Sign Up title card -->
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="130sp"
@@ -23,7 +22,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/signup"
-                    android:textSize="45sp"
+                    android:textSize="35sp"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
                     android:textAlignment="center"/>
@@ -33,8 +32,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="30dp"
-            android:gravity="center">
+            android:padding="50dp"
+            android:gravity="center"
+            android:layout_marginTop="16dp">
 
             <ImageView
                 android:layout_width="16dp"
@@ -43,115 +43,142 @@
                 android:src="@drawable/progress_active"
                 android:layout_margin="4dp"/>
 
-            <ImageView
+            <View
                 android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_margin="4dp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/progress_inactive"
-                tools:ignore="ImageContrastCheck" />
+                android:layout_height="2dp"
+                android:background="@color/progress_inactive_color"
+                android:layout_gravity="center_vertical"/>
 
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:layout_margin="4dp"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/progress_inactive"
+                android:layout_margin="4dp"
                 tools:ignore="ImageContrastCheck" />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="2dp"
+                android:background="@color/progress_inactive_color"
+                android:layout_gravity="center_vertical"/>
 
             <ImageView
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:layout_margin="4dp"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/progress_inactive"
+                android:layout_margin="4dp"
+                tools:ignore="ImageContrastCheck" />
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="2dp"
+                android:background="@color/progress_inactive_color"
+                android:layout_gravity="center_vertical"/>
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/progress_inactive"
+                android:layout_margin="4dp"
                 tools:ignore="ImageContrastCheck" />
         </LinearLayout>
 
         <!-- Social Media Icons (if needed) -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="20sp"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginBottom="16dp">
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:padding="20sp"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:gravity="center"-->
+<!--            android:layout_marginBottom="16dp">-->
 
-            <ImageView
-                android:layout_width="55sp"
-                android:layout_height="55sp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_email"
-                android:layout_margin="8dp"/>
+<!--            <ImageView-->
+<!--                android:layout_width="55sp"-->
+<!--                android:layout_height="55sp"-->
+<!--                android:contentDescription="@string/app_name"-->
+<!--                android:src="@drawable/ic_email"-->
+<!--                android:layout_margin="8dp"/>-->
 
-            <ImageView
-                android:layout_width="65sp"
-                android:layout_height="65sp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_instagram"
-                android:layout_margin="8dp"/>
+<!--            <ImageView-->
+<!--                android:layout_width="65sp"-->
+<!--                android:layout_height="65sp"-->
+<!--                android:contentDescription="@string/app_name"-->
+<!--                android:src="@drawable/ic_instagram"-->
+<!--                android:layout_margin="8dp"/>-->
 
-            <ImageView
-                android:layout_width="60sp"
-                android:layout_height="60sp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_facebook"
-                android:layout_margin="8dp"/>
+<!--            <ImageView-->
+<!--                android:layout_width="60sp"-->
+<!--                android:layout_height="60sp"-->
+<!--                android:contentDescription="@string/app_name"-->
+<!--                android:src="@drawable/ic_facebook"-->
+<!--                android:layout_margin="8dp"/>-->
 
-            <ImageView
-                android:layout_width="60sp"
-                android:layout_height="60sp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_tiktok"
-                android:layout_margin="8dp"/>
-        </LinearLayout>
+<!--            <ImageView-->
+<!--                android:layout_width="60sp"-->
+<!--                android:layout_height="60sp"-->
+<!--                android:contentDescription="@string/app_name"-->
+<!--                android:src="@drawable/ic_tiktok"-->
+<!--                android:layout_margin="8dp"/>-->
+<!--        </LinearLayout>-->
 
         <!-- Form Fields -->
-        <EditText
-            android:id="@+id/etUsername"
-            android:layout_width="300sp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/edit_text_background"
-            android:hint="@string/etUsername"
-            android:inputType="textNoSuggestions|textVisiblePassword"
-            android:layout_gravity="center"
-            android:padding="16sp"
-            tools:ignore="Autofill,TextContrastCheck,VisualLintTextFieldSize" />
-
-        <!-- Password EditText and Forgot Password TextView -->
         <LinearLayout
-            android:layout_width="340sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="20sp"
             android:layout_gravity="center"
             android:orientation="vertical">
 
-            <!-- EditText for Password -->
             <EditText
-                android:id="@+id/editTextPassword"
+                android:id="@+id/etUsername"
                 android:layout_width="300sp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 android:background="@drawable/edit_text_background"
-                android:hint="@string/etPassword"
-                android:inputType="textPassword"
-                android:padding="16dp"
+                android:hint="@string/etUsername"
+                android:inputType="textNoSuggestions|textVisiblePassword"
                 android:layout_gravity="center"
+                android:padding="16sp"
                 tools:ignore="Autofill,TextContrastCheck,VisualLintTextFieldSize" />
 
-            <!-- Forgot Password TextView -->
-            <TextView
-                android:id="@+id/textViewForgotPassword"
-                android:layout_width="wrap_content"
+            <!-- Password EditText and Forgot Password TextView -->
+            <LinearLayout
+                android:layout_width="340sp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="@string/forgot_password"
-                android:textSize="12sp"
-                android:textColor="@android:color/holo_red_light"
-                tools:ignore="TextContrastCheck" />
-        </LinearLayout>
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <!-- EditText for Password -->
+                <EditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="300sp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="@string/etPassword"
+                    android:inputType="textPassword"
+                    android:padding="16dp"
+                    android:layout_gravity="center"
+                    tools:ignore="Autofill,TextContrastCheck,VisualLintTextFieldSize" />
+
+                <!-- Forgot Password TextView -->
+                <TextView
+                    android:id="@+id/textViewForgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/forgot_password"
+                    android:textSize="12sp"
+                    android:textColor="@android:color/holo_red_light"
+                    tools:ignore="TextContrastCheck" />
+            </LinearLayout>
+    </LinearLayout>
+
 
         <!-- Sign Up Button -->
         <Button
@@ -180,6 +207,6 @@
                 android:layout_height="75dp"
                 android:layout_marginTop="32dp"
                 android:contentDescription="@string/app_name"
-                android:src="@drawable/aura_logo" />
+                android:src="@drawable/aura_vector_logo" />
         </LinearLayout>
     </LinearLayout>
