@@ -1,62 +1,160 @@
-<!-- activity_personal_questions_1.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@android:color/white"
+    tools:ignore="ExtraText">
 
-    <TextView
-        android:id="@+id/textViewSignUp"
-        android:layout_width="wrap_content"
+    <!-- Header Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130sp"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_corners_topcard"
+        android:padding="16sp"
+        android:paddingBottom="24dp"
+        android:gravity="bottom|center">
+
+        <TextView
+            android:id="@+id/textViewSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+    <!-- Progress Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/signup"
-        android:textSize="24sp"
-        android:layout_gravity="center_horizontal"/>
+        android:orientation="horizontal"
+        android:padding="50dp"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
 
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_active"
+            android:layout_margin="4dp"/>
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="2dp"
+            android:background="@color/progress_active_color"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_active"
+            android:layout_margin="4dp"
+            tools:ignore="ImageContrastCheck" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="2dp"
+            android:background="@color/progress_inactive_color"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_inactive"
+            android:layout_margin="4dp"
+            tools:ignore="ImageContrastCheck" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="2dp"
+            android:background="@color/progress_inactive_color"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_inactive"
+            android:layout_margin="4dp"
+            tools:ignore="ImageContrastCheck" />
+    </LinearLayout>
+
+    <!-- Question Text -->
     <TextView
         android:id="@+id/textViewQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/questionAge"
         android:textSize="18sp"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/orange" />
 
-    <RadioGroup
+    <!-- Buttons for Age Options -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
 
-        <RadioButton
-            android:id="@+id/radio_less_than_18"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/button_less_than_18"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ageOption1"/>
+            android:text="@string/ageOption1"
+            android:background="@drawable/button_background"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp" />
 
-        <RadioButton
-            android:id="@+id/radio_18_21"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/button_18_21"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ageOption2"/>
+            android:text="@string/ageOption2"
+            android:background="@drawable/button_background"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp" />
 
-        <RadioButton
-            android:id="@+id/radio_22_26"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/button_22_26"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ageOption3"/>
+            android:text="@string/ageOption3"
+            android:background="@drawable/button_background"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp" />
 
-        <RadioButton
-            android:id="@+id/radio_more_than_27"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/button_more_than_27"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/ageOption4"/>
-    </RadioGroup>
+            android:text="@string/ageOption4"
+            android:background="@drawable/button_background"
+            android:padding="12dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonNext"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textViewSkip"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnNext"
-        android:layout_marginTop="24dp"/>
-
+        android:layout_gravity="end"
+        android:text="@string/skip_question"
+        android:textSize="16sp"
+        android:textColor="@android:color/holo_orange_dark"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="16dp"/>
 </LinearLayout>
