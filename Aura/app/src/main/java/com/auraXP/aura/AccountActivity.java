@@ -45,9 +45,9 @@ public class AccountActivity extends AppCompatActivity {
         termsButton = findViewById(R.id.terms_button);
         aboutButton = findViewById(R.id.about_button);
         logoutButton = findViewById(R.id.btn_logout);
-        friendsNav = findViewById(R.id.friends_nav);
-        centerNav = findViewById(R.id.center_nav);
-        accountNav = findViewById(R.id.account_nav);
+//        friendsNav = findViewById(R.id.friends_nav);
+//        centerNav = findViewById(R.id.center_nav);
+//        accountNav = findViewById(R.id.account_nav);
 
         // Setting click listeners
         profileIcon.setOnClickListener(new View.OnClickListener() {

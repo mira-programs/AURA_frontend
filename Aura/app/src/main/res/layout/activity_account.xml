@@ -186,8 +186,9 @@
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Friends"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_friends" />
+            android:scaleType="fitCenter"/>
+<!--            android:src="@drawable/ic_friends"-->
+
 
         <!-- Center Target -->
         <ImageView
@@ -195,8 +196,8 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:contentDescription="Target"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_target" />
+            android:scaleType="fitCenter" />
+<!--        android:src="@drawable/ic_target"-->
 
         <!-- Account Button -->
         <ImageButton
@@ -205,7 +206,7 @@
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Account"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_account" />
+            android:scaleType="fitCenter"/>
+<!--            android:src="@drawable/ic_account" -->
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
