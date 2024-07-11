@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <corners
-        android:topLeftRadius="0dp"
-        android:topRightRadius="0dp"
-        android:bottomLeftRadius="30sp"
-        android:bottomRightRadius="30sp" />
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Border layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp"
+                android:bottomLeftRadius="30sp"
+                android:bottomRightRadius="30sp" />
+            <stroke
+                android:width="5dp"
+                android:color="@color/signUpButtonColor"
+                android:angle="45" />
+            <solid android:color="@android:color/transparent" />
+        </shape>
+    </item>
+</layer-list>

@@ -25,6 +25,13 @@
     <string name="btnNext">Next</string>
     <string name="skip_question">Skip this question</string>
 
+    //Personal questions 2 components
+    <string name="questionOcc">What is your occupation?</string>
+    <string name="ansStudent">Student</string>
+    <string name="ansWork">Working</string>
+    <string name="ansUnemployed">Unemployed</string>
+    <string name="ansParent">Stay at home parent</string>
+    
     //Accounts strings
     <string name="btnSettings">Settings</string>
     <string name="btnPrivacy">Privacy</string>
@@ -35,4 +42,7 @@
     <string name="btnLogout">Log out</string>
     <string name="btnFriends">Friends</string>
     <string name="tvAccount">Account</string>
+
+    //Challenges main page components
+    <string name="challenges">Challenges</string>
 </resources>

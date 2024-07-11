@@ -1,62 +1,176 @@
-<!-- activity_personal_questions_2.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@android:color/white"
+    tools:ignore="ExtraText">
 
-    <TextView
-        android:id="@+id/textViewSignUp"
-        android:layout_width="wrap_content"
+    <!-- Header Layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130sp"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_corners_topcard"
+        android:padding="16sp"
+        android:paddingBottom="24dp"
+        android:gravity="bottom|center">
+
+        <TextView
+            android:id="@+id/textViewSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signup"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"/>
+    </LinearLayout>
+
+    <!-- Progress Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:textSize="24sp"
-        android:layout_gravity="center_horizontal"/>
+        android:orientation="horizontal"
+        android:padding="50dp"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
 
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_active"
+            android:layout_margin="4dp"/>
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="2dp"
+            android:background="@color/progress_active_color"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_active"
+            android:layout_margin="4dp"
+            tools:ignore="ImageContrastCheck" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="2dp"
+            android:background="@color/progress_active_color"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_active"
+            android:layout_margin="4dp"
+            tools:ignore="ImageContrastCheck" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="2dp"
+            android:background="@color/progress_inactive_color"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_inactive"
+            android:layout_margin="4dp"
+            tools:ignore="ImageContrastCheck" />
+    </LinearLayout>
+
+    <!-- Question Text -->
     <TextView
         android:id="@+id/textViewQuestion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="What is your occupation?"
-        android:textSize="18sp"
-        android:layout_marginTop="24dp"/>
+        android:text="@string/questionOcc"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/orange" />
 
-    <RadioGroup
+    <!-- Buttons for Age Options -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
 
-        <RadioButton
-            android:id="@+id/radio_at_school"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/button_less_than_18"
+            android:layout_width="370sp"
             android:layout_height="wrap_content"
-            android:text="At school"/>
+            android:text="@string/ansStudent"
+            android:textSize="16sp"
+            android:backgroundTint="@color/orange"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"
+            android:theme="@style/Base.Widget.AppCompat.Button" />
 
-        <RadioButton
-            android:id="@+id/radio_student"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/button_18_21"
+            android:layout_width="370sp"
             android:layout_height="wrap_content"
-            android:text="Student"/>
+            android:text="@string/ansWork"
+            android:textSize="16sp"
+            android:backgroundTint="@color/orange"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"
+            android:theme="@style/Base.Widget.AppCompat.Button" />
 
-        <RadioButton
-            android:id="@+id/radio_working"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/button_22_26"
+            android:layout_width="370sp"
             android:layout_height="wrap_content"
-            android:text="Working"/>
+            android:text="@string/ansUnemployed"
+            android:textSize="16sp"
+            android:backgroundTint="@color/orange"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"
+            android:theme="@style/Base.Widget.AppCompat.Button" />
 
-        <RadioButton
-            android:id="@+id/radio_unemployed"
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/button_more_than_27"
+            android:layout_width="370sp"
             android:layout_height="wrap_content"
-            android:text="Unemployed"/>
-    </RadioGroup>
+            android:text="@string/ansParent"
+            android:textSize="16sp"
+            android:backgroundTint="@color/orange"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"
+            android:theme="@style/Base.Widget.AppCompat.Button" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonNext"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="340sp"
         android:layout_height="wrap_content"
-        android:text="Next"
-        android:layout_marginTop="24dp"/>
+        android:orientation="vertical"
+        android:layout_gravity="center">
 
+        <TextView
+            android:id="@+id/textViewSkip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="@string/skip_question"
+            android:textSize="16sp"
+            android:textColor="@android:color/holo_orange_dark"
+            android:layout_marginTop="16dp"
+            android:paddingBottom="16dp"/>
+    </LinearLayout>
 </LinearLayout>
