@@ -108,7 +108,7 @@
         android:gravity="center_horizontal">
 
         <Button
-            android:id="@+id/button_less_than_18"
+            android:id="@+id/ansStudent"
             android:layout_width="370sp"
             android:layout_height="wrap_content"
             android:text="@string/ansStudent"
@@ -120,7 +120,7 @@
             android:theme="@style/Base.Widget.AppCompat.Button" />
 
         <Button
-            android:id="@+id/button_18_21"
+            android:id="@+id/ansWorking"
             android:layout_width="370sp"
             android:layout_height="wrap_content"
             android:text="@string/ansWork"
@@ -132,7 +132,7 @@
             android:theme="@style/Base.Widget.AppCompat.Button" />
 
         <Button
-            android:id="@+id/button_22_26"
+            android:id="@+id/ansUnemployed"
             android:layout_width="370sp"
             android:layout_height="wrap_content"
             android:text="@string/ansUnemployed"
@@ -144,7 +144,7 @@
             android:theme="@style/Base.Widget.AppCompat.Button" />
 
         <Button
-            android:id="@+id/button_more_than_27"
+            android:id="@+id/ansParent"
             android:layout_width="370sp"
             android:layout_height="wrap_content"
             android:text="@string/ansParent"

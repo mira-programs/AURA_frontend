@@ -1,19 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Border layer -->
+    <!-- Base shape with rounded bottom corners -->
     <item>
         <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/> <!-- Replace with desired color -->
             <corners
                 android:topLeftRadius="0dp"
                 android:topRightRadius="0dp"
-                android:bottomLeftRadius="30sp"
-                android:bottomRightRadius="30sp" />
+                android:bottomLeftRadius="30dp"
+                android:bottomRightRadius="30dp"/> <!-- Adjust the radius as needed -->
             <stroke
                 android:width="5dp"
-                android:color="@color/signUpButtonColor"
-                android:angle="45" />
-            <solid android:color="@android:color/transparent" />
+                android:color="@color/signUpButtonColor"/> <!-- Replace with desired border color -->
+        </shape>
+    </item>
+
+    <!-- Overlay shape to hide the top border -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/> <!-- Replace with the same color as base shape -->
         </shape>
     </item>
 </layer-list>

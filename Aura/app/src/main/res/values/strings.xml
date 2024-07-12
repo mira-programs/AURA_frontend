@@ -45,4 +45,5 @@
 
     //Challenges main page components
     <string name="challenges">Challenges</string>
+    <string name="btnDailyChallenge">Accept Today\'s Challenge</string>
 </resources>
