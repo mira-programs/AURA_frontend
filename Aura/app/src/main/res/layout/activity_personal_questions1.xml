@@ -109,7 +109,7 @@
 
         <Button
             android:id="@+id/button_less_than_18"
-            android:layout_width="370sp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:text="@string/ageOption1"
             android:textSize="16sp"
@@ -121,7 +121,7 @@
 
         <Button
             android:id="@+id/button_18_21"
-            android:layout_width="370sp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:text="@string/ageOption2"
             android:textSize="16sp"
@@ -133,7 +133,7 @@
 
         <Button
             android:id="@+id/button_22_26"
-            android:layout_width="370sp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:text="@string/ageOption3"
             android:textSize="16sp"
@@ -145,7 +145,7 @@
 
         <Button
             android:id="@+id/button_more_than_27"
-            android:layout_width="370sp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:text="@string/ageOption4"
             android:textSize="16sp"
@@ -157,7 +157,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="340sp"
+        android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center">

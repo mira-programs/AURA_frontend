@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="200sp"
+        android:layout_marginTop="200dp"
         android:text="@string/welcome_msg"
         android:textColor="@android:color/white"
         android:textSize="24sp" />
@@ -19,7 +19,7 @@
     <ImageView
         android:id="@+id/app_icon"
         android:layout_width="match_parent"
-        android:layout_height="75sp"
+        android:layout_height="75dp"
         android:layout_below="@id/welcome_text"
         android:contentDescription="@string/app_name"
         android:src="@drawable/aura_vector_logo"
@@ -35,6 +35,7 @@
         android:backgroundTint="@android:color/white"
         android:onClick="onClickGoLoginPage"
         android:text="@string/btn_login"
+        android:textSize="16sp"
         android:textAllCaps="false"
         android:textColor="@android:color/holo_orange_dark" />
 
@@ -48,6 +49,7 @@
         android:backgroundTint="@android:color/white"
         android:onClick="onClickGoRegister"
         android:text="@string/btn_register"
+        android:textSize="16sp"
         android:textAllCaps="false"
         android:textColor="#DD2C00" />
 

@@ -46,4 +46,8 @@
     //Challenges main page components
     <string name="challenges">Challenges</string>
     <string name="btnDailyChallenge">Accept Today\'s Challenge</string>
+    <string name="tvMiniChallenges">Mini Challenges:</string>
+
+    //Tutorial page components
+    <string name="tutorialTitle">Tutorial</string>
 </resources>
