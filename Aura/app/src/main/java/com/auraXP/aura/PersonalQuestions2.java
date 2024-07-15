@@ -63,7 +63,7 @@ public class PersonalQuestions2 extends AppCompatActivity {
     }
 
     private void navigateToNextActivity() {
-        Intent intent = new Intent(PersonalQuestions2.this, DailyChallenges.class);
+        Intent intent = new Intent(PersonalQuestions2.this, Tutorial.class);
         startActivity(intent);
     }
 }

@@ -25,12 +25,87 @@
             android:textColor="@android:color/white"
             android:textAlignment="center"/>
     </LinearLayout>
-    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="35dp"
+        android:gravity="center"
+        android:layout_marginTop="16dp">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_active"
+            android:layout_margin="4dp"/>
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="2dp"
+            android:background="@color/progress_active_color"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_active"
+            android:layout_margin="4dp"
+            tools:ignore="ImageContrastCheck" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="2dp"
+            android:background="@color/progress_active_color"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_active"
+            android:layout_margin="4dp"
+            tools:ignore="ImageContrastCheck" />
+
+        <View
+            android:layout_width="16dp"
+            android:layout_height="2dp"
+            android:background="@color/progress_active_color"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/progress_active"
+            android:layout_margin="4dp"
+            tools:ignore="ImageContrastCheck" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/tutorial"
+            android:textSize="19sp"
+            android:textColor="@color/signUpButtonColor"
+            android:textAlignment="center" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/signUpButtonColor"
+            android:minHeight="48dp"
+            android:onClick="onClickGetStarted"
+            android:text="@string/btnGetStarted"
+            android:textSize="16sp"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 </LinearLayout>
