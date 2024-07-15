@@ -1,6 +1,7 @@
 package com.auraXP.aura;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class SettingsAccountActivity extends AppCompatActivity {
+
+
+    private Button notificationsButton;
+    private Button streaksButton;
+    private Button restrictedButton;
+    private Button datetimeButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
