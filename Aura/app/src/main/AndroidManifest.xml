@@ -13,21 +13,11 @@
         android:theme="@style/Theme.Aura.FullScreen"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
-            android:name=".ItemActivity"
-=======
-            android:name=".AcceptDailyChallenge"
-            android:exported="false" />
-        <activity
-            android:name=".AcceptedChallenge"
->>>>>>> 2b86312e5eb357a9954ffd3ebfa7ee1e3876b7cf
-            android:exported="false" />
-        <activity
             android:name=".ChallengeCompleted"
             android:exported="false" />
         <activity
             android:name=".Tutorial"
-            android:exported="false" /> <!-- Activities -->
+            android:exported="false" />
         <activity
             android:name=".ChangePasswordActivity"
             android:exported="false" />
@@ -56,11 +46,13 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".LeaderboardActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
