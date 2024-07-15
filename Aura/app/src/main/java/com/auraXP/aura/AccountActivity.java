@@ -85,7 +85,8 @@ public class AccountActivity extends AppCompatActivity {
         privacyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent (AccountActivity.this, PrivacyAccountActivity.class);
+                startActivity(intent);
             }
         });
 
