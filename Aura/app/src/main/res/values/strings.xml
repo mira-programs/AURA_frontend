@@ -59,4 +59,12 @@
     <string name="tvAccepted">Challenge Accepted!</string>
     <string name="tvAnnounceChallenge">Today\'s Challenge:</string>
     <string name="tvFakeChallenge">Jump</string>
+    <string-array name="fakeMinis">
+        <item>Mini 1</item>
+        <item>Mini 2</item>
+        <item>Mini 3</item>
+        <item>Mini 4</item>
+        <item>Mini 5</item>
+        <item>Mini 6</item>
+    </string-array>
 </resources>
