@@ -11,17 +11,28 @@
 
     <!-- Profile Title -->
 
+    <!-- Profile Form -->
+
+    <!-- Change Password Button -->
+
+    <!-- Delete Account Button -->
+
+    <!-- Sign Out Button -->
+
+    <!-- Bottom Navigation -->
+
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:layout_marginBottom="11dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_corners_topcard"
         android:gravity="bottom|center"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@+id/profile_title"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -35,21 +46,10 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Profile Form -->
-
-    <!-- Change Password Button -->
-
-    <!-- Delete Account Button -->
-
-    <!-- Sign Out Button -->
-
-    <!-- Bottom Navigation -->
-
     <TextView
         android:id="@+id/profile_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
         android:layout_marginBottom="16dp"
         android:text="Profile"
         android:textColor="#FF0040"
@@ -63,10 +63,11 @@
         android:id="@+id/linearLayout2"
         android:layout_width="342dp"
         android:layout_height="289dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/button_background"
         android:orientation="vertical"
         android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/change_password_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.434"
         app:layout_constraintStart_toStartOf="parent"
@@ -121,6 +122,22 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/delete_account_button"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/button_background"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical"
+        android:text="Delete account"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.422"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/change_password_button" />
+
+    <Button
         android:id="@+id/change_password_button"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
@@ -132,23 +149,7 @@
         android:textSize="16sp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="480dp" />
-
-    <Button
-        android:id="@+id/delete_account_button"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/button_background"
-        android:drawablePadding="8dp"
-        android:gravity="center_vertical"
-        android:text="Delete account"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.422"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/change_password_button" />
+        tools:layout_editor_absoluteY="440dp" />
 
     <Button
         android:id="@+id/sign_out_button"
