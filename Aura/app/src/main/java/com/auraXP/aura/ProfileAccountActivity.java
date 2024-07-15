@@ -67,8 +67,8 @@ public class ProfileAccountActivity extends AppCompatActivity {
 
     private void changePassword() {
 //       //new activity for password changing
-//        Intent intent = new Intent(ProfileAccountActivity.this, ChangePasswordActivity.class);
-//        startActivity(intent);
+        Intent intent = new Intent(ProfileAccountActivity.this, ChangePasswordActivity.class);
+        startActivity(intent);
     }
 
     private void deleteAccount() {
