@@ -78,7 +78,8 @@ public class AccountActivity extends AppCompatActivity {
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent (AccountActivity.this, SettingsAccountActivity.class);
+                startActivity(intent);
             }
         });
 

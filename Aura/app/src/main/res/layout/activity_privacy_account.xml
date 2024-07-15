@@ -41,6 +41,7 @@
         android:layout_marginEnd="179dp"
         android:layout_marginBottom="508dp"
         android:text="Privacy"
+        android:textColor="@color/red"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
