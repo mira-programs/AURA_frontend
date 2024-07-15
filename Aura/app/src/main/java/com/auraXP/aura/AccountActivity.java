@@ -33,7 +33,7 @@ public class AccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_account);
 
         // Binding views
-        accountHeader = findViewById(R.id.account_header);
+        accountHeader = findViewById(R.id.account_header2);
         accountUsername = findViewById(R.id.account_username);
         profileIcon = findViewById(R.id.profile_icon);
         auraPointsIcon = findViewById(R.id.aura_points_icon);
@@ -69,7 +69,8 @@ public class AccountActivity extends AppCompatActivity {
         challengesAchievedIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent (AccountActivity.this, ChallengesAccountActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -126,21 +127,23 @@ public class AccountActivity extends AppCompatActivity {
         friendsNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent (AccountActivity.this, FriendsActivity.class);
+                startActivity(intent);
             }
         });
 
         centerNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent (AccountActivity.this, DailyChallenges.class);
+                startActivity(intent);
             }
         });
 
         accountNav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //this is it
             }
         });
     }
