@@ -12,12 +12,18 @@
     <!-- Profile Title -->
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="130dp"
+        android:layout_marginBottom="11dp"
         android:background="@drawable/rounded_corners_topcard"
         android:gravity="bottom|center"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/profile_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView"
@@ -43,14 +49,18 @@
         android:id="@+id/profile_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="16dp"
         android:text="Profile"
         android:textColor="#FF0040"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="141dp" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="342dp"
         android:layout_height="289dp"
         android:layout_marginTop="16dp"

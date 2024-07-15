@@ -1,5 +1,7 @@
+<!-- res/layout/main_layout.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/containerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -15,25 +17,81 @@
         android:paddingBottom="24dp"
         android:gravity="bottom|center">
 
-       <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="@string/challenges"
-           android:textSize="35sp"
-           android:textStyle="bold"
-           android:textColor="@color/signUpButtonColor"
-           android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/challenges"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="@color/signUpButtonColor"
+            android:textAlignment="center"/>
     </LinearLayout>
 
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="75dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="@string/btnDailyChallenge"
-        android:textSize="20sp"
-        android:backgroundTint="@color/signUpButtonColor" />
+    <LinearLayout
+        android:id="@+id/layoutAcceptDailyChallenge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:visibility="visible">
 
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="75dp"
+            android:text="@string/btnDailyChallenge"
+            android:textSize="20sp"
+            android:backgroundTint="@color/signUpButtonColor"
+            android:onClick="onAcceptDailyChallengeClicked" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutAcceptedChallenge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:background="@drawable/pinkie_square"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tvAccepted"
+                android:textAlignment="center"
+                android:textSize="24sp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/tvAnnounceChallenge"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/signUpButtonColor"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/tvFakeChallenge"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/signUpButtonColor"/>
+    </LinearLayout>
+
+    <!-- Other UI elements below -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
