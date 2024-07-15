@@ -31,7 +31,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/account_header" />
 
-
+    android:progressDrawable="@drawable/progress_drawable" <!-- Custom drawable for progress bar -->
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/aura_points_header" />
 
 
     <ProgressBar
