@@ -62,7 +62,7 @@ public class SettingsAccountActivity extends AppCompatActivity {
               //  startActivity(intent);
             }
         });
-        
+
         datetimeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

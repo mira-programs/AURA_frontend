@@ -94,7 +94,8 @@ public class AccountActivity extends AppCompatActivity {
         languageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent (AccountActivity.this,LanguageAccountActivity.class);
+                startActivity(intent);
             }
         });
 
