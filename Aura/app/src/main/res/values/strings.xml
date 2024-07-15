@@ -54,4 +54,9 @@
         Hi! Thank you for downloading Aura! Get ready for a time of fun and adventure! \n\nEveryday, you\'ll get a Main Challenge to complete. To start the challenge, click on the "Accept Today\s Challenge" button. Once you do, you have 24 hours to complete the challenge. If you don\'t, AuraPoints will be taken off. Once completed, You will gain 50 AuraPoints. \n\nYou\'ll also find Mini Challenges; completing one will give you 5-20 AuraPoints, depending on the difficulty. \nThese are the two things you should know before starting.\n\nGood luck and have fun! \n~The Creators
     </string>
     <string name="btnGetStarted">Get Started!</string>
+
+    //Accepted challenges components
+    <string name="tvAccepted">Challenge Accepted!</string>
+    <string name="tvAnnounceChallenge">Today\'s Challenge:</string>
+    <string name="tvFakeChallenge">Jump</string>
 </resources>
