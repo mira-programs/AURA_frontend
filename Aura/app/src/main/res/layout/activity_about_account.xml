@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutAccountActivity">
+
+    <LinearLayout
+        android:id="@+id/top_card_layout"
+        android:layout_width="414dp"
+        android:layout_height="124dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_corners_topcard"
+        android:gravity="bottom|center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Account"
+            android:textColor="@color/white"
+            android:textSize="45sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/about_account_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="492dp"
+        android:text="About AURA"
+        android:textColor="@color/red"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.775"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_card_layout"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="228dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/aboutTextView"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="16dp"
+            android:text="Hey there, Aura Warriors! 🌟 Welcome to AURA, your go-to app for turning everyday challenges into exciting adventures! Whether you’re cramming for finals or chilling between classes, AURA is here to sprinkle a little magic into your daily routine. Dive into a world of fun challenges that not only boost your aura points but also keep you motivated and engaged! From completing quirky tasks to exploring new activities, each day is a chance to level up your experience. Plus, who doesn’t love earning rewards while having a blast with friends? Join our vibrant community of fellow students and watch your aura shine brighter with every challenge you conquer! Let’s make university life unforgettable, one aura point at a time. Are you ready to embark on this amazing journey? Let’s go, and may the best aura win! 🌈✨"
+            android:textColor="@android:color/red"
+            android:textSize="15sp" />
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

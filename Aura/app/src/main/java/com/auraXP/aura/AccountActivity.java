@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class AccountActivity extends AppCompatActivity {
 
     private TextView accountHeader;
-    private TextView accountUsername;
+    //private TextView accountUsername;
     private ImageButton profileIcon;
     private ImageButton auraPointsIcon;
     private ImageButton challengesAchievedIcon;
@@ -20,7 +20,7 @@ public class AccountActivity extends AppCompatActivity {
     private Button privacyButton;
     private Button languageButton;
     private Button helpButton;
-    private Button termsButton;
+   // private Button termsButton;
     private Button aboutButton;
     private Button logoutButton;
     private ImageButton friendsNav;
@@ -34,7 +34,7 @@ public class AccountActivity extends AppCompatActivity {
 
         // Binding views
         accountHeader = findViewById(R.id.textView);
-        accountUsername = findViewById(R.id.account_username);
+        //accountUsername = findViewById(R.id.account_username);
         profileIcon = findViewById(R.id.profile_icon);
         auraPointsIcon = findViewById(R.id.aura_points_icon);
         challengesAchievedIcon = findViewById(R.id.challenges_achieved_icon);
@@ -42,7 +42,7 @@ public class AccountActivity extends AppCompatActivity {
         privacyButton = findViewById(R.id.privacy_button);
         languageButton = findViewById(R.id.language_button);
         helpButton = findViewById(R.id.help_button);
-        termsButton = findViewById(R.id.terms_button);
+        //termsButton = findViewById(R.id.terms_button);
         aboutButton = findViewById(R.id.about_button);
         logoutButton = findViewById(R.id.btn_logout);
 //        friendsNav = findViewById(R.id.friends_nav);
@@ -106,24 +106,21 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
-        termsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
 
         aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent (AccountActivity.this,AboutAccountActivity.class);
+                startActivity(intent);
             }
         });
 
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(AccountActivity.this, LoginActivity.class); //back to login
+                startActivity(intent);
+                finish(); //close activity
             }
         });
 
