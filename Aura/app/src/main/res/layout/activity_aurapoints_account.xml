@@ -31,21 +31,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/account_header" />
 
-    android:progressDrawable="@drawable/progress_drawable" <!-- Custom drawable for progress bar -->
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@id/aura_points_header" />
-
 
     <ProgressBar
         android:id="@+id/aura_points_progress"
         style="@android:style/Widget.ProgressBar.Horizontal"
         android:layout_width="217dp"
         android:layout_height="50dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="8dp"
         android:progress="60"
-        tools:layout_editor_absoluteX="106dp"
-        tools:layout_editor_absoluteY="149dp"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/aura_points_xp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aura_points_header"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/aura_points_level"
@@ -71,6 +72,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/aura_points_xp" />
 
+
+    <TextView
+        android:id="@+id/aura_points_xp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginEnd="131dp"
+        android:layout_marginBottom="4dp"
+        android:text="2330 XP"
+        android:textColor="#FF0040"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/aura_points_level"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aura_points_progress" />
+
     <LinearLayout
         android:id="@+id/activities_list"
         android:layout_width="match_parent"
@@ -84,14 +101,16 @@
         <!-- Items will be added dynamically -->
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/aura_points_xp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="2330 XP"
-        android:textColor="#FF0040"
-        android:textSize="35sp"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="191dp" />
+    <ListView
+        android:id="@+id/listViewAuraPoints"
+        android:layout_width="401dp"
+        android:layout_height="368dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="77dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aura_points_level" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
