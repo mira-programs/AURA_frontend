@@ -1,58 +1,53 @@
 package com.auraXP.aura;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FriendsActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
-    private FriendsAdapter adapter;
-    private List<Friend> friendsList;
-    private Button friendsTab, leaderboardTab;
+    private ListView friendsListView;
+    private FriendsAdapter friendsAdapter;
+    private TextView header;
+    private List<String> friends;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
 
-        // Initialize RecyclerView
-        recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        friendsList = new ArrayList<>();
+        friends = new ArrayList<>();
+        // Add sample data
+        friends.add("Maria Eid");
+        friends.add("Mira Hussein");
+        friends.add("Mariam Sonji");
 
-        // Add some sample data
-        friendsList.add(new Friend("Maria Eid", 759));
-        friendsList.add(new Friend("Mira Hussein", 759));
-        friendsList.add(new Friend("Mariam Sonji", 759));
-        // Add more friends as needed
+        header = findViewById(R.id.header);
+        friendsListView = findViewById(R.id.friends_list);
+        friendsAdapter = new FriendsAdapter(this, friends);
+        friendsListView.setAdapter(friendsAdapter);
 
-        // Initialize adapter with the list of friends
-        adapter = new FriendsAdapter(friendsList);
-        recyclerView.setAdapter(adapter);
+        Button friendsButton = findViewById(R.id.friends_button);
+        Button leaderboardButton = findViewById(R.id.leaderboard_button);
 
-//        // Initialize tabs
-//        friendsTab = findViewById(R.id.friends_tab);
-//        leaderboardTab = findViewById(R.id.leaderboard_tab);
-//
-//        // Set tab click listeners
-//        friendsTab.setOnClickListener(v -> showFriends());
-//        leaderboardTab.setOnClickListener(v -> showLeaderboard());
-
-        // TODO: Implement search functionality for friends
+        friendsButton.setOnClickListener(v -> showFriends());
+        leaderboardButton.setOnClickListener(v -> showLeaderboard());
     }
 
     private void showFriends() {
-        // TODO: Implement showFriends
+        header.setText("Friends");
+        // Update the adapter data if needed
     }
 
     private void showLeaderboard() {
-        // TODO: Implement showLeaderboard
+        header.setText("Leaderboard");
+        // Update the adapter data to show leaderboard information
     }
 }
