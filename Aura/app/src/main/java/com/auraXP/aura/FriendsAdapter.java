@@ -49,7 +49,7 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendVi
             super(itemView);
             friendNameTextView = itemView.findViewById(R.id.friendNameTextView);
             friendXPTextView = itemView.findViewById(R.id.friendXPTextView);
-            profileImageView = itemView.findViewById(R.id.profileImageView);
+//            profileImageView = itemView.findViewById(R.id.profileImageView);
             auraButton = itemView.findViewById(R.id.auraButton);
         }
     }

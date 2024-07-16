@@ -28,22 +28,22 @@ public class FriendsActivity extends AppCompatActivity {
         friendsList = new ArrayList<>();
 
         // Add some sample data
-        friendsList.add(new Friend("Maria Eid", "759 XP"));
-        friendsList.add(new Friend("Mira Hussein", "759 XP"));
-        friendsList.add(new Friend("Mariam Sonji", "759 XP"));
+        friendsList.add(new Friend("Maria Eid", 759));
+        friendsList.add(new Friend("Mira Hussein", 759));
+        friendsList.add(new Friend("Mariam Sonji", 759));
         // Add more friends as needed
 
         // Initialize adapter with the list of friends
         adapter = new FriendsAdapter(friendsList);
         recyclerView.setAdapter(adapter);
 
-        // Initialize tabs
-        friendsTab = findViewById(R.id.friends_tab);
-        leaderboardTab = findViewById(R.id.leaderboard_tab);
-
-        // Set tab click listeners
-        friendsTab.setOnClickListener(v -> showFriends());
-        leaderboardTab.setOnClickListener(v -> showLeaderboard());
+//        // Initialize tabs
+//        friendsTab = findViewById(R.id.friends_tab);
+//        leaderboardTab = findViewById(R.id.leaderboard_tab);
+//
+//        // Set tab click listeners
+//        friendsTab.setOnClickListener(v -> showFriends());
+//        leaderboardTab.setOnClickListener(v -> showLeaderboard());
 
         // TODO: Implement search functionality for friends
     }

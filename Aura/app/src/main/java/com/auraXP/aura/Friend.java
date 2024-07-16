@@ -2,9 +2,9 @@ package com.auraXP.aura;
 
 public class Friend {
     private String name;
-    private String xp;
+    private int xp;
 
-    public Friend(String name, String xp) {
+    public Friend(String name, int xp) {
         this.name = name;
         this.xp = xp;
     }
@@ -13,7 +13,7 @@ public class Friend {
         return name;
     }
 
-    public String getXp() {
+    public int getXp() {
         return xp;
     }
 }

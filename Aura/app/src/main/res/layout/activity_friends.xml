@@ -56,23 +56,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0">
 
-        <Button
-            android:id="@+id/friends_tab"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/tab_button_background"
-            android:text="Friends"
-            android:textColor="@color/black" />
+<!--        <Button-->
+<!--            android:id="@+id/friends_tab"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/tab_button_background"-->
+<!--            android:text="Friends"-->
+<!--            android:textColor="@color/black" />-->
 
-        <Button
-            android:id="@+id/leaderboard_tab"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/tab_button_background"
-            android:text="Leaderboard"
-            android:textColor="@color/black" />
+<!--        <Button-->
+<!--            android:id="@+id/leaderboard_tab"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@drawable/tab_button_background"-->
+<!--            android:text="Leaderboard"-->
+<!--            android:textColor="@color/black" />-->
     </LinearLayout>
 
     <!-- RecyclerView for displaying search results -->
@@ -99,33 +99,33 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <!-- Friends Button -->
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Friends"
-            android:src="@drawable/ic_friends"
-            android:scaleType="fitCenter" />
+<!--        <ImageButton-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--            android:contentDescription="Friends"-->
+<!--            android:src="@drawable/ic_friends"-->
+<!--            android:scaleType="fitCenter" />-->
 
         <!-- Center Target -->
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="Target"
-            android:src="@drawable/ic_target"
-            android:scaleType="fitCenter" />
+<!--        <ImageView-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:contentDescription="Target"-->
+<!--            android:src="@drawable/ic_target"-->
+<!--            android:scaleType="fitCenter" />-->
 
         <!-- Account Button -->
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Account"
-            android:src="@drawable/ic_account"
-            android:scaleType="fitCenter" />
+<!--        <ImageButton-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--            android:contentDescription="Account"-->
+<!--            android:src="@drawable/ic_account"-->
+<!--            android:scaleType="fitCenter" />-->
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
