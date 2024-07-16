@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/top_card_layout"
-        android:layout_width="414dp"
+        android:layout_width="match_parent"
         android:layout_height="124dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_corners_topcard"

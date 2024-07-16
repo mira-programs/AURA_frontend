@@ -11,17 +11,15 @@
     <!-- Header -->
     <LinearLayout
         android:id="@+id/top_card_layout"
-        android:layout_width="414dp"
+        android:layout_width="match_parent"
         android:layout_height="124dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/rounded_corners_topcard"
-        android:gravity="bottom|center"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@id/searchView"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
             android:id="@+id/textView"
@@ -36,24 +34,56 @@
     <!-- SearchView -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:iconifiedByDefault="false"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_margin="16dp"
+        android:queryHint="Find friends..."
         app:layout_constraintTop_toBottomOf="@id/top_card_layout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:queryHint="Search for friends"
         app:layout_constraintHorizontal_bias="0.0" />
+
+    <!-- Tabs -->
+    <LinearLayout
+        android:id="@+id/tabs_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/searchView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0">
+
+        <Button
+            android:id="@+id/friends_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/tab_button_background"
+            android:text="Friends"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/leaderboard_tab"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/tab_button_background"
+            android:text="Leaderboard"
+            android:textColor="@color/black" />
+    </LinearLayout>
 
     <!-- RecyclerView for displaying search results -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@id/searchView"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tabs_layout"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -75,6 +105,7 @@
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Friends"
+            android:src="@drawable/ic_friends"
             android:scaleType="fitCenter" />
 
         <!-- Center Target -->
@@ -83,6 +114,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:contentDescription="Target"
+            android:src="@drawable/ic_target"
             android:scaleType="fitCenter" />
 
         <!-- Account Button -->
@@ -92,6 +124,7 @@
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="Account"
+            android:src="@drawable/ic_account"
             android:scaleType="fitCenter" />
     </LinearLayout>
 
