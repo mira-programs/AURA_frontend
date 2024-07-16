@@ -5,22 +5,24 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChangePasswordActivity">
+    tools:context=".HelpAccountActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="342dp"
-        android:layout_height="289dp"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="50dp"
+        android:layout_width="348dp"
+        android:layout_height="397dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="184dp"
         android:background="@drawable/button_background"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/change_password_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_title">
+        app:layout_constraintTop_toBottomOf="@+id/help_account_header"
+        app:layout_constraintVertical_bias="0.0">
 
 
         <EditText
@@ -29,7 +31,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Current password"
+            android:text="First name"
             android:textColor="#b0b0b0" />
 
         <EditText
@@ -38,7 +40,25 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="New password"
+            android:text="Last name"
+            android:textColor="#b0b0b0" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:text="E-mail"
+            android:textColor="#b0b0b0" />
+
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:inputType="phone"
+            android:minHeight="48dp"
+            android:text="Your message"
             android:textColor="#b0b0b0" />
 
         <Button
@@ -53,21 +73,19 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginBottom="11dp"
+        android:id="@+id/top_card_layout"
+        android:layout_width="414dp"
+        android:layout_height="124dp"
         android:background="@drawable/rounded_corners_topcard"
         android:gravity="bottom|center"
         android:orientation="vertical"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/profile_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/account_header2"
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Account"
@@ -77,17 +95,18 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/profile_title"
+        android:id="@+id/help_account_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="566dp"
-        android:text="Change Password"
-        android:textColor="#FF0040"
-        android:textSize="18sp"
-
+        android:layout_marginStart="147dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginBottom="498dp"
+        android:text="Contact us"
+        android:textColor="@color/red"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/top_card_layout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
