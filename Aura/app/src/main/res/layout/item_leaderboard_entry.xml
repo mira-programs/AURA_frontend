@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="8dp">
+    android:padding="16dp"
+    android:background="@drawable/rounded_corners_item"
+    android:layout_marginBottom="8dp">
 
     <TextView
         android:id="@+id/tvPlayerName"
@@ -11,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Player Name"
+        android:textColor="#000000"
         android:textSize="18sp"/>
 
     <TextView
@@ -18,5 +21,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Score"
+        android:textColor="#000000"
         android:textSize="18sp"/>
 </LinearLayout>
