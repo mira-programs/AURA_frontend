@@ -33,7 +33,7 @@ public class AccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_account);
 
         // Binding views
-        accountHeader = findViewById(R.id.account_header);
+//        accountHeader = findViewById(R.id.account_header);
         accountUsername = findViewById(R.id.account_username);
         profileIcon = findViewById(R.id.profile_icon);
         auraPointsIcon = findViewById(R.id.aura_points_icon);
