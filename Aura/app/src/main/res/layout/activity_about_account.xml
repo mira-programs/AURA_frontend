@@ -65,7 +65,7 @@
             android:background="@android:color/white"
             android:padding="16dp"
             android:text="Hey there, Aura Warriors! 🌟 Welcome to AURA, your go-to app for turning everyday challenges into exciting adventures! Whether you’re cramming for finals or chilling between classes, AURA is here to sprinkle a little magic into your daily routine. Dive into a world of fun challenges that not only boost your aura points but also keep you motivated and engaged! From completing quirky tasks to exploring new activities, each day is a chance to level up your experience. Plus, who doesn’t love earning rewards while having a blast with friends? Join our vibrant community of fellow students and watch your aura shine brighter with every challenge you conquer! Let’s make university life unforgettable, one aura point at a time. Are you ready to embark on this amazing journey? Let’s go, and may the best aura win! 🌈✨"
-            android:textColor="@android:color/red"
+            android:textColor="@color/dark_red"
             android:textSize="15sp" />
 
     </ScrollView>
