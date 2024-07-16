@@ -3,6 +3,8 @@ package com.auraXP.aura;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -10,26 +12,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHolder> {
+public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.FriendViewHolder> {
 
-    private List<String> friendsList;
+    private List<Friend> friendsList;
 
-    public FriendsAdapter(List<String> friendsList) {
+    public FriendsAdapter(List<Friend> friendsList) {
         this.friendsList = friendsList;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_friend, parent, false);
-        return new ViewHolder(view);
+    public FriendViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_friend, parent, false);
+        return new FriendViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String friendName = friendsList.get(position);
-        holder.friendNameTextView.setText(friendName);
+    public void onBindViewHolder(@NonNull FriendViewHolder holder, int position) {
+        Friend friend = friendsList.get(position);
+        holder.friendNameTextView.setText(friend.getName());
+        holder.friendXPTextView.setText(friend.getXp());
     }
 
     @Override
@@ -37,13 +39,18 @@ public class FriendsAdapter extends RecyclerView.Adapter<FriendsAdapter.ViewHold
         return friendsList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
-
+    static class FriendViewHolder extends RecyclerView.ViewHolder {
         TextView friendNameTextView;
+        TextView friendXPTextView;
+        ImageView profileImageView;
+        Button auraButton;
 
-        public ViewHolder(@NonNull View itemView) {
+        public FriendViewHolder(@NonNull View itemView) {
             super(itemView);
             friendNameTextView = itemView.findViewById(R.id.friendNameTextView);
+            friendXPTextView = itemView.findViewById(R.id.friendXPTextView);
+            profileImageView = itemView.findViewById(R.id.profileImageView);
+            auraButton = itemView.findViewById(R.id.auraButton);
         }
     }
 }
