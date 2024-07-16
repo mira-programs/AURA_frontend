@@ -12,8 +12,60 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:src="@drawable/white_target"
-            android:scaleType="fitCenter"/>
+            android:rotation="180"
+            android:scaleType="fitXY"/>
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        android:text="@string/tvCongrats"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="@string/tvCompleted"
+        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textAlignment="center"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/btnSurprise"
+        android:textSize="20sp"
+        android:textColor="@color/signUpButtonColor" />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/btnSurprise"
+        android:textSize="20sp"
+        android:textColor="@color/signUpButtonColor"/>
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="35dp"
+        style="@style/CustomButtonStyle"
+        android:text="@string/btnBackHome"
+        android:textSize="20sp"/>
+
 </LinearLayout>

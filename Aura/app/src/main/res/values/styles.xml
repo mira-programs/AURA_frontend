@@ -4,4 +4,11 @@
         <item name="android:button">@drawable/custom_radiobutton</item>
         <item name="android:textColor">@color/orange</item>
     </style>
+
+    <style name="CustomButtonStyle">
+        <item name="android:background">@drawable/white_btn_border</item>
+        <item name="android:backgroundTint">@android:color/transparent</item>
+        <item name="android:backgroundTintMode">src_in</item>
+    </style>
 </resources>
+

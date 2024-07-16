@@ -67,4 +67,11 @@
         <item>Mini 5</item>
         <item>Mini 6</item>
     </string-array>
+
+    //Completed challenge page components
+    <string name="tvCongrats">Congratulations!</string>
+    <string name="tvCompleted">You have completed today\'s challenge!</string>
+    <string name="btnSurprise">Surprise challenge</string>
+    <string name="btnBackHome">Back Home</string>
+
 </resources>
