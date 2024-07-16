@@ -12,32 +12,35 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText etUsernameSignup = findViewById(R.id.etUsername);
-    EditText etPasswordSignup = findViewById(R.id.etPassword);
+    EditText etUsernameSignup;
+    EditText etPasswordSignup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-            Button signUpButton = findViewById(R.id.buttonSignUp);
-            signUpButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (validate()) {
-                        Intent intent = new Intent(RegisterActivity.this, PersonalQuestions1.class);
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(RegisterActivity.this, "Please fill out all fields.", Toast.LENGTH_SHORT).show();
-                    }
+        etUsernameSignup = findViewById(R.id.etUsername);
+        etPasswordSignup = findViewById(R.id.etPassword);
+
+        Button signUpButton = findViewById(R.id.buttonSignUp);
+        signUpButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (validate()) {
+                    Intent intent = new Intent(RegisterActivity.this, PersonalQuestions1.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(RegisterActivity.this, "Please fill out all fields.", Toast.LENGTH_SHORT).show();
                 }
+            }
         });
     }
 
     public boolean validate() {
-        boolean isValid =true;
+        boolean isValid = true;
 
-        if(TextUtils.isEmpty(etUsernameSignup.getText().toString())) {
+        if (TextUtils.isEmpty(etUsernameSignup.getText().toString())) {
             etUsernameSignup.setError("Username is required.");
             isValid = false;
         }

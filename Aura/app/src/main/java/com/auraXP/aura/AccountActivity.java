@@ -34,7 +34,7 @@ public class AccountActivity extends AppCompatActivity {
 
         // Binding views
         accountHeader = findViewById(R.id.textView);
-        accountUsername = findViewById(R.id.account_username);
+//        accountUsername = findViewById(R.id.account_username);
         profileIcon = findViewById(R.id.profile_icon);
         auraPointsIcon = findViewById(R.id.aura_points_icon);
         challengesAchievedIcon = findViewById(R.id.challenges_achieved_icon);
