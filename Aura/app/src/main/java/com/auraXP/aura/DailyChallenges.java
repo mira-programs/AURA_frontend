@@ -2,6 +2,7 @@ package com.auraXP.aura;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -26,34 +28,66 @@ public class DailyChallenges extends AppCompatActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_PERMISSION = 100;
+    private static final String STATE_LAYOUT = "currentLayout";
+    private static final String STATE_IMAGE = "capturedImage";
+    private static final String STATE_CHALLENGE_STATUS = "challengeStatus";
+
     private ImageView imageView;
     private Button btnTakePicture;
 
     private LinearLayout layoutAcceptDailyChallenge;
     private LinearLayout layoutAcceptedChallenge;
     private LinearLayout layoutChallengeCompleted;
-    private TextView tvChallengeStatus; // Added TextView for challenge status
+    private TextView tvChallengeStatus;
 
-    private Bitmap capturedImageBitmap; // Store the captured image bitmap
+    private Bitmap capturedImageBitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_challenges);
 
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         imageView = findViewById(R.id.ivTakenImage);
         btnTakePicture = findViewById(R.id.btnTakePicture);
-        tvChallengeStatus = findViewById(R.id.tvChallengeStatus); // Initialize TextView
+        tvChallengeStatus = findViewById(R.id.tvChallengeStatus);
 
         layoutAcceptDailyChallenge = findViewById(R.id.layoutAcceptDailyChallenge);
         layoutAcceptedChallenge = findViewById(R.id.layoutAcceptedChallenge);
         layoutChallengeCompleted = findViewById(R.id.layoutChallengeCompleted);
 
-        showAcceptDailyChallenge();
+        if (savedInstanceState != null) {
+            // Restore the saved state
+            int currentLayout = savedInstanceState.getInt(STATE_LAYOUT);
+            if (currentLayout == R.id.layoutAcceptDailyChallenge) {
+                showAcceptDailyChallenge();
+            } else if (currentLayout == R.id.layoutAcceptedChallenge) {
+                showAcceptedChallenge();
+            } else if (currentLayout == R.id.layoutChallengeCompleted) {
+                showChallengeCompleted();
+            }
+
+            // Restore the captured image
+            capturedImageBitmap = savedInstanceState.getParcelable(STATE_IMAGE);
+            if (capturedImageBitmap != null) {
+                imageView.setImageBitmap(capturedImageBitmap);
+                imageView.setVisibility(View.VISIBLE);
+                toggleButton();
+            }
+
+            // Restore challenge status text
+            String challengeStatus = savedInstanceState.getString(STATE_CHALLENGE_STATUS);
+            if (challengeStatus != null) {
+                tvChallengeStatus.setText(challengeStatus);
+            }
+        } else {
+            showAcceptDailyChallenge();
+        }
 
         boolean challengeCompleted = getIntent().getBooleanExtra("challengeCompleted", false);
         if (challengeCompleted) {
-            showChallengeCompleted(); // Show the layout for the completed challenge
+            showChallengeCompleted();
         } else {
             showAcceptDailyChallenge();
         }
@@ -74,18 +108,12 @@ public class DailyChallenges extends AppCompatActivity {
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == Activity.RESULT_OK) {
-                    // Handle the captured image here
                     Bundle extras = result.getData().getExtras();
                     capturedImageBitmap = (Bitmap) extras.get("data");
                     if (capturedImageBitmap != null) {
-                        // Display the captured image in your ImageView
                         imageView.setImageBitmap(capturedImageBitmap);
                         imageView.setVisibility(View.VISIBLE);
-
-                        // Update the button text and behavior
                         toggleButton();
-
-                        // Update challenge status text
                         tvChallengeStatus.setText(getString(R.string.challenge_completed_message));
                     }
                 }
@@ -106,14 +134,12 @@ public class DailyChallenges extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Toast.makeText(DailyChallenges.this, "Image Submitted", Toast.LENGTH_SHORT).show();
-
                     Intent intent = new Intent(DailyChallenges.this, ChallengeCompleted.class);
                     intent.putExtra("capturedImageBitmap", capturedImageBitmap);
                     startActivity(intent);
                 }
             });
         } else {
-            // Keep the button text as "Submit Image" state
             btnTakePicture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -142,6 +168,26 @@ public class DailyChallenges extends AppCompatActivity {
     private void showChallengeCompleted() {
         layoutAcceptDailyChallenge.setVisibility(View.GONE);
         layoutAcceptedChallenge.setVisibility(View.GONE);
-        layoutChallengeCompleted.setVisibility(View.VISIBLE); // Show layoutChallengeCompleted
+        layoutChallengeCompleted.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    protected void onSaveInstanceState( Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+
+        // Save the current layout visibility state
+        if (layoutAcceptDailyChallenge.getVisibility() == View.VISIBLE) {
+            savedInstanceState.putInt(STATE_LAYOUT, R.id.layoutAcceptDailyChallenge);
+        } else if (layoutAcceptedChallenge.getVisibility() == View.VISIBLE) {
+            savedInstanceState.putInt(STATE_LAYOUT, R.id.layoutAcceptedChallenge);
+        } else if (layoutChallengeCompleted.getVisibility() == View.VISIBLE) {
+            savedInstanceState.putInt(STATE_LAYOUT, R.id.layoutChallengeCompleted);
+        }
+
+        // Save the captured image bitmap
+        savedInstanceState.putParcelable(STATE_IMAGE, capturedImageBitmap);
+
+        // Save the challenge status text
+        savedInstanceState.putString(STATE_CHALLENGE_STATUS, tvChallengeStatus.getText().toString());
     }
 }

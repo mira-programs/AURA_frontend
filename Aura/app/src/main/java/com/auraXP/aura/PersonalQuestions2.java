@@ -1,6 +1,7 @@
 package com.auraXP.aura;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,8 @@ public class PersonalQuestions2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_personal_questions2);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         Button buttonStudent = findViewById(R.id.ansStudent);
         Button buttonWorking = findViewById(R.id.ansWorking);

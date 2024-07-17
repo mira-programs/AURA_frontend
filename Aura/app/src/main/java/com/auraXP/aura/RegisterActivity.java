@@ -1,6 +1,7 @@
 package com.auraXP.aura;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -19,6 +20,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         etUsernameSignup = findViewById(R.id.etUsername);
         etPasswordSignup = findViewById(R.id.etPassword);
