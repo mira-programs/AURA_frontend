@@ -96,6 +96,6 @@ public class FriendsActivity extends AppCompatActivity {
     public void addFriend(String friendName) {
         // Add the friend to your friends list or perform other actions
         // For now, just show a Toast message
-        Toast.makeText(this, "Added " + friendName + " as a friend!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sent " + friendName + " a friend request!", Toast.LENGTH_SHORT).show();
     }
 }
