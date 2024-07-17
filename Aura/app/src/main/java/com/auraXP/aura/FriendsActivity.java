@@ -1,12 +1,16 @@
 package com.auraXP.aura;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,6 +43,25 @@ public class FriendsActivity extends AppCompatActivity {
 
         friendsButton.setOnClickListener(v -> showFriends());
         leaderboardButton.setOnClickListener(v -> showLeaderboard());
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_friends:
+                        startActivity(new Intent(FriendsActivity.this, FriendsActivity.class));
+                        return true;
+                    case R.id.navigation_center:
+                        // Handle the center button click
+                        return true;
+                    case R.id.navigation_account:
+                        startActivity(new Intent(FriendsActivity.this, AccountActivity.class));
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     private void showFriends() {
