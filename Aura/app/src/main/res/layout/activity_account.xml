@@ -8,17 +8,6 @@
     tools:context=".AccountActivity">
 
     <!-- Header -->
-
-    <!-- Username -->
-
-    <!-- Profile Icons Row -->
-
-    <!-- Settings List -->
-
-    <!-- Log Out Button -->
-
-    <!-- Bottom Navigation -->
-
     <LinearLayout
         android:id="@+id/top_card_layout"
         android:layout_width="414dp"
@@ -30,10 +19,8 @@
         android:padding="16dp"
         app:layout_constraintBottom_toTopOf="@id/profile_icons_row"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView"
@@ -45,20 +32,18 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <!-- Profile Icons Row -->
     <LinearLayout
         android:id="@+id/profile_icons_row"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
+        app:layout_constraintBottom_toTopOf="@+id/settings_list"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.23">
+        app:layout_constraintTop_toBottomOf="@id/top_card_layout">
 
-        <!-- Profile Icon -->
         <ImageButton
             android:id="@+id/profile_icon"
             android:layout_width="76dp"
@@ -69,9 +54,6 @@
             android:scaleType="fitCenter"
             android:src="@drawable/ic_profile_account" />
 
-        <!-- Aura Points Icon -->
-
-        <!-- Challenges Achieved Icon -->
         <ImageButton
             android:id="@+id/aura_points_icon"
             android:layout_width="76dp"
@@ -93,7 +75,9 @@
             android:src="@drawable/ic_challengesachieved_account" />
     </LinearLayout>
 
+    <!-- Settings List -->
     <LinearLayout
+        android:id="@+id/settings_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -168,42 +152,6 @@
             android:textSize="18sp" />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="#FF0040"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <!-- Friends Button -->
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Friends"
-            android:scaleType="fitCenter" />
-
-        <!-- Center Target -->
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:contentDescription="Target"
-            android:scaleType="fitCenter" />
-
-        <!-- Account Button -->
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="Account"
-            android:scaleType="fitCenter" />
-    </LinearLayout>
-
     <TextView
         android:id="@+id/profileText"
         android:layout_width="wrap_content"
@@ -242,5 +190,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_icons_row"
         app:layout_constraintVertical_bias="0.0" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
