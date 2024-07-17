@@ -17,7 +17,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
 import java.util.Objects;
+
 import static android.Manifest.permission.CAMERA;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
@@ -30,6 +32,8 @@ public class DailyChallenges extends AppCompatActivity {
 
     private LinearLayout layoutAcceptDailyChallenge;
     private LinearLayout layoutAcceptedChallenge;
+
+    private Bitmap capturedImageBitmap; // Store the captured image bitmap
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +66,10 @@ public class DailyChallenges extends AppCompatActivity {
                 if (result.getResultCode() == Activity.RESULT_OK) {
                     // Handle the captured image here
                     Bundle extras = result.getData().getExtras();
-                    Bitmap imageBitmap = (Bitmap) extras.get("data");
-                    if (imageBitmap != null) {
+                    capturedImageBitmap = (Bitmap) extras.get("data");
+                    if (capturedImageBitmap != null) {
                         // Display the captured image in your ImageView
-                        imageView.setImageBitmap(imageBitmap);
+                        imageView.setImageBitmap(capturedImageBitmap);
                         imageView.setVisibility(View.VISIBLE);
 
                         // Update the button text and behavior
@@ -82,33 +86,21 @@ public class DailyChallenges extends AppCompatActivity {
         }
     }
 
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = Objects.requireNonNull(data).getExtras();
-            imageView.setVisibility(View.VISIBLE);
-            imageView.setImageBitmap((android.graphics.Bitmap) extras.get("data"));
-            toggleButton();
-        }
-    }
-
     private void toggleButton() {
         if (btnTakePicture.getText().equals(getString(R.string.btnPicture))) {
             btnTakePicture.setText(R.string.btnSubmitImage);
             btnTakePicture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    // Handle submit image action
                     Toast.makeText(DailyChallenges.this, "Image Submitted", Toast.LENGTH_SHORT).show();
-                    // Optionally, reset the button and image view
-                    resetButtonAndImage();
+
+                    Intent intent = new Intent(DailyChallenges.this, ChallengeCompleted.class);
+                    intent.putExtra("capturedImageBitmap", capturedImageBitmap);
+                    startActivity(intent);
                 }
             });
         } else {
-            // Reset to "Take Picture" state
-            btnTakePicture.setText(R.string.btnPicture);
+            // Keep the button text as "Submit Image" state
             btnTakePicture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -117,22 +109,6 @@ public class DailyChallenges extends AppCompatActivity {
                 }
             });
         }
-    }
-
-    private void resetButtonAndImage() {
-        // Reset button text and behavior
-        btnTakePicture.setText(R.string.btnPicture);
-        btnTakePicture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Dispatch the camera intent again
-                dispatchTakePictureIntent();
-            }
-        });
-
-        // Clear the ImageView
-        imageView.setImageResource(0);
-        imageView.setVisibility(View.GONE);
     }
 
     public void onAcceptDailyChallengeClicked(View view) {
@@ -149,3 +125,4 @@ public class DailyChallenges extends AppCompatActivity {
         layoutAcceptedChallenge.setVisibility(View.VISIBLE);
     }
 }
+

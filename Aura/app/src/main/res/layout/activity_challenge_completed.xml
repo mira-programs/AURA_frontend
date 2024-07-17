@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="100dp"
         android:text="@string/tvCongrats"
         android:textSize="40sp"
         android:textColor="@color/white"
@@ -66,9 +66,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="35dp"
         android:background="@drawable/white_btn_border"
+        android:minHeight="48dp"
         android:text="@string/btnBackHome"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </LinearLayout>
