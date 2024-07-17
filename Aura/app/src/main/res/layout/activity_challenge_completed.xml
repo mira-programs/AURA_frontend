@@ -15,7 +15,8 @@
             android:layout_height="200dp"
             android:src="@drawable/white_target"
             android:rotation="180"
-            android:scaleType="fitXY"/>
+            android:scaleType="fitXY"
+            android:contentDescription="@string/app_name"/>
     </LinearLayout>
 
     <TextView
@@ -59,13 +60,15 @@
         android:textSize="20sp"
         android:textColor="@color/signUpButtonColor"/>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="35dp"
-        style="@style/CustomButtonStyle"
+        android:background="@drawable/white_btn_border"
         android:text="@string/btnBackHome"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="20sp"/>
 
 </LinearLayout>
