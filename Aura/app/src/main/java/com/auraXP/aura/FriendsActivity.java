@@ -42,7 +42,7 @@ public class FriendsActivity extends AppCompatActivity {
         leaderboard.add("2. Jane Smith - 1400 Points");
         leaderboard.add("3. Alice Johnson - 1300 Points");
 
-        header = findViewById(R.id.header);
+        header = findViewById(R.id.header_title);
         searchBar = findViewById(R.id.search_bar);
         friendsListView = findViewById(R.id.friends_list);
 
