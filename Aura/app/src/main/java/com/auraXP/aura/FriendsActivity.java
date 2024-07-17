@@ -38,9 +38,9 @@ public class FriendsActivity extends AppCompatActivity {
         friends.add("Mariam Sonji");
 
         leaderboard = new ArrayList<>();
-        leaderboard.add("1. John Doe: 1500 AURA");
-        leaderboard.add("2. Jane Smith - 1400 AURA");
-        leaderboard.add("3. Alice Johnson - 1300 AURA");
+        leaderboard.add("1. John Doe - 1500 Points");
+        leaderboard.add("2. Jane Smith - 1400 Points");
+        leaderboard.add("3. Alice Johnson - 1300 Points");
 
         header = findViewById(R.id.header);
         searchBar = findViewById(R.id.search_bar);
@@ -57,22 +57,19 @@ public class FriendsActivity extends AppCompatActivity {
         leaderboardButton.setOnClickListener(v -> showLeaderboard());
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.navigation_friends:
-                        startActivity(new Intent(FriendsActivity.this, FriendsActivity.class));
-                        return true;
-                    case R.id.navigation_center:
-                        // Handle the center button click
-                        return true;
-                    case R.id.navigation_account:
-                        startActivity(new Intent(FriendsActivity.this, AccountActivity.class));
-                        return true;
-                }
-                return false;
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_friends:
+                    startActivity(new Intent(FriendsActivity.this, FriendsActivity.class));
+                    return true;
+                case R.id.navigation_center:
+                    startActivity(new Intent(FriendsActivity.this, DailyChallenges.class));
+                    return true;
+                case R.id.navigation_account:
+                    startActivity(new Intent(FriendsActivity.this, AccountActivity.class));
+                    return true;
             }
+            return false;
         });
 
         // Initialize with Friends section
@@ -98,6 +95,6 @@ public class FriendsActivity extends AppCompatActivity {
     public void addFriend(String friendName) {
         // Add the friend to your friends list or perform other actions
         // For now, just show a Toast message
-        Toast.makeText(this, "Sent " + friendName + " a friend request!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Added " + friendName + " as a friend!", Toast.LENGTH_SHORT).show();
     }
 }

@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class AccountActivity extends AppCompatActivity {
 
     private TextView accountHeader;
@@ -109,6 +111,22 @@ public class AccountActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish(); // Close activity
             }
+        });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_friends:
+                    startActivity(new Intent(AccountActivity.this, FriendsActivity.class));
+                    return true;
+                case R.id.navigation_center:
+                    startActivity(new Intent(AccountActivity.this, DailyChallenges.class));
+                    return true;
+                case R.id.navigation_account:
+                    startActivity(new Intent(AccountActivity.this, AccountActivity.class));
+                    return true;
+            }
+            return false;
         });
     }
 }
