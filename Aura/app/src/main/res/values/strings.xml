@@ -47,6 +47,7 @@
     <string name="challenges">Challenges</string>
     <string name="btnDailyChallenge">Accept Today\'s Challenge</string>
     <string name="tvMiniChallenges">Mini Challenges:</string>
+    <string name="btnSubmitImage">Submit Image</string>
 
     //Tutorial page components
     <string name="tutorialTitle">Tutorial</string>

@@ -99,7 +99,19 @@
             android:layout_gravity="center"
             android:backgroundTint="@color/signUpButtonColor"
             android:text="@string/btnPicture"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:onClick="onTakePictureClicked" />
+
+<!--        <Button-->
+<!--            android:id="@+id/btnSubmitImage"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:backgroundTint="@color/signUpButtonColor"-->
+<!--            android:text="@string/btnSubmitImage"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:visibility="gone" />-->
     </LinearLayout>
 
 

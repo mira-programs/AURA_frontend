@@ -1,8 +1,7 @@
 package com.auraXP.aura;
 
-import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -14,54 +13,126 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import java.util.Objects;
+import static android.Manifest.permission.CAMERA;
+import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 public class DailyChallenges extends AppCompatActivity {
 
+    private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int REQUEST_PERMISSION = 100;
-    private ImageView ivTakenImage;
+    private ImageView imageView;
+    private Button btnTakePicture;
 
     private LinearLayout layoutAcceptDailyChallenge;
     private LinearLayout layoutAcceptedChallenge;
-
-    private ActivityResultLauncher<Intent> takePictureLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_challenges);
 
-        ivTakenImage = findViewById(R.id.ivTakenImage);
-        Button btnTakePicture = findViewById(R.id.btnTakePicture);
+        imageView = findViewById(R.id.ivTakenImage);
+        btnTakePicture = findViewById(R.id.btnTakePicture);
 
         layoutAcceptDailyChallenge = findViewById(R.id.layoutAcceptDailyChallenge);
         layoutAcceptedChallenge = findViewById(R.id.layoutAcceptedChallenge);
 
-        takePictureLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(),
-                result -> {
-                    if (result.getResultCode() == RESULT_OK) {
-                        Intent data = result.getData();
-                        Bundle extras = data.getExtras();
-                        Bitmap imageBitmap = (Bitmap) extras.get("data");
-                        ivTakenImage.setImageBitmap(imageBitmap);
-                        ivTakenImage.setVisibility(View.VISIBLE);
-                    }
-                });
+        showAcceptDailyChallenge();
 
         btnTakePicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (checkPermissions()) {
-                    openCamera();
+                if (ContextCompat.checkSelfPermission(DailyChallenges.this, CAMERA) != PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(DailyChallenges.this, new String[]{CAMERA}, REQUEST_PERMISSION);
+                } else {
+                    dispatchTakePictureIntent();
                 }
             }
         });
+    }
 
-        showAcceptDailyChallenge();
+    private final ActivityResultLauncher<Intent> takePictureLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == Activity.RESULT_OK) {
+                    // Handle the captured image here
+                    Bundle extras = result.getData().getExtras();
+                    Bitmap imageBitmap = (Bitmap) extras.get("data");
+                    if (imageBitmap != null) {
+                        // Display the captured image in your ImageView
+                        imageView.setImageBitmap(imageBitmap);
+                        imageView.setVisibility(View.VISIBLE);
+
+                        // Update the button text and behavior
+                        toggleButton();
+                    }
+                }
+            }
+    );
+
+    private void dispatchTakePictureIntent() {
+        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+            takePictureLauncher.launch(takePictureIntent);
+        }
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = Objects.requireNonNull(data).getExtras();
+            imageView.setVisibility(View.VISIBLE);
+            imageView.setImageBitmap((android.graphics.Bitmap) extras.get("data"));
+            toggleButton();
+        }
+    }
+
+    private void toggleButton() {
+        if (btnTakePicture.getText().equals(getString(R.string.btnPicture))) {
+            btnTakePicture.setText(R.string.btnSubmitImage);
+            btnTakePicture.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Handle submit image action
+                    Toast.makeText(DailyChallenges.this, "Image Submitted", Toast.LENGTH_SHORT).show();
+                    // Optionally, reset the button and image view
+                    resetButtonAndImage();
+                }
+            });
+        } else {
+            // Reset to "Take Picture" state
+            btnTakePicture.setText(R.string.btnPicture);
+            btnTakePicture.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    // Dispatch the camera intent again
+                    dispatchTakePictureIntent();
+                }
+            });
+        }
+    }
+
+    private void resetButtonAndImage() {
+        // Reset button text and behavior
+        btnTakePicture.setText(R.string.btnPicture);
+        btnTakePicture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Dispatch the camera intent again
+                dispatchTakePictureIntent();
+            }
+        });
+
+        // Clear the ImageView
+        imageView.setImageResource(0);
+        imageView.setVisibility(View.GONE);
     }
 
     public void onAcceptDailyChallengeClicked(View view) {
@@ -76,33 +147,5 @@ public class DailyChallenges extends AppCompatActivity {
     private void showAcceptedChallenge() {
         layoutAcceptDailyChallenge.setVisibility(View.GONE);
         layoutAcceptedChallenge.setVisibility(View.VISIBLE);
-    }
-
-    private boolean checkPermissions() {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED ||
-                ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_PERMISSION);
-            return false;
-        }
-        return true;
-    }
-
-    private void openCamera() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            takePictureLauncher.launch(takePictureIntent);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == REQUEST_PERMISSION) {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                openCamera();
-            } else {
-                Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show();
-            }
-        }
     }
 }
