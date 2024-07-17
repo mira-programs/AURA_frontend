@@ -21,7 +21,7 @@ public class FriendsActivity extends AppCompatActivity {
 
     private ListView friendsListView;
     private FriendsAdapter friendsAdapter;
-    private TextView header;
+    TextView header;
     private EditText searchBar;
     private List<String> friends;
     private List<String> leaderboard;
@@ -38,9 +38,9 @@ public class FriendsActivity extends AppCompatActivity {
         friends.add("Mariam Sonji");
 
         leaderboard = new ArrayList<>();
-        leaderboard.add("John Doe");
-        leaderboard.add("Jane Smith");
-        leaderboard.add("Alice Johnson");
+        leaderboard.add("1. John Doe: 1500 AURA");
+        leaderboard.add("2. Jane Smith - 1400 AURA");
+        leaderboard.add("3. Alice Johnson - 1300 AURA");
 
         header = findViewById(R.id.header);
         searchBar = findViewById(R.id.search_bar);
@@ -78,11 +78,6 @@ public class FriendsActivity extends AppCompatActivity {
         // Initialize with Friends section
         showFriends();
     }
-    public void addFriend(String friendName) {
-        // Add the friend to your friends list or perform other actions
-        // For now, just show a Toast message
-        Toast.makeText(this, "Added " + friendName + " as a friend!", Toast.LENGTH_SHORT).show();
-    }
 
     private void showFriends() {
         header.setText("Friends");
@@ -98,5 +93,11 @@ public class FriendsActivity extends AppCompatActivity {
         friendsListView.setVisibility(android.view.View.VISIBLE);
         friendsAdapter.setFriends(leaderboard);  // Update the adapter data for leaderboard
         friendsAdapter.notifyDataSetChanged();
+    }
+
+    public void addFriend(String friendName) {
+        // Add the friend to your friends list or perform other actions
+        // For now, just show a Toast message
+        Toast.makeText(this, "Sent " + friendName + " a friend request!", Toast.LENGTH_SHORT).show();
     }
 }

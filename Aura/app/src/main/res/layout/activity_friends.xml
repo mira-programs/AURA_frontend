@@ -16,18 +16,11 @@
         android:text="Friends"
         android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/search_bar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Find friends..."
-        android:padding="8dp"
-        android:background="@android:drawable/edit_text" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="8dp">
 
         <Button
             android:id="@+id/friends_button"
@@ -44,6 +37,14 @@
             android:text="Leaderboard" />
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Find friends..."
+        android:padding="8dp"
+        android:background="@android:drawable/edit_text" />
+
     <ListView
         android:id="@+id/friends_list"
         android:layout_width="match_parent"
@@ -55,4 +56,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/bottom_nav_menu" /></LinearLayout>
+        app:menu="@menu/bottom_nav_menu" />
+</LinearLayout>

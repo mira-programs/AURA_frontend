@@ -51,13 +51,15 @@ public class FriendsAdapter extends BaseAdapter {
         friendName.setText(friends.get(position));
 
         if (context instanceof FriendsActivity) {
-            auraButton.setVisibility(View.VISIBLE);
-            auraButton.setOnClickListener(v -> {
-                // Handle Aura++ button click
-                ((FriendsActivity) context).addFriend(friends.get(position));
-            });
-        } else {
-            auraButton.setVisibility(View.GONE);
+            if (((FriendsActivity) context).header.getText().equals("Friends")) {
+                auraButton.setVisibility(View.VISIBLE);
+                auraButton.setOnClickListener(v -> {
+                    // Handle Aura++ button click
+                    ((FriendsActivity) context).addFriend(friends.get(position));
+                });
+            } else {
+                auraButton.setVisibility(View.GONE);
+            }
         }
 
         return convertView;
