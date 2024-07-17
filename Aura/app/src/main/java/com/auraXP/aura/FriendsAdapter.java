@@ -9,15 +9,18 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Set;
 
 public class FriendsAdapter extends BaseAdapter {
 
     private Context context;
     private List<String> friends;
+    private Set<String> requestedFriends;
 
-    public FriendsAdapter(Context context, List<String> friends) {
+    public FriendsAdapter(Context context, List<String> friends, Set<String> requestedFriends) {
         this.context = context;
         this.friends = friends;
+        this.requestedFriends = requestedFriends;
     }
 
     public void setFriends(List<String> friends) {
@@ -47,18 +50,26 @@ public class FriendsAdapter extends BaseAdapter {
 
         TextView friendName = convertView.findViewById(R.id.friend_name);
         Button auraButton = convertView.findViewById(R.id.aura_button);
+        TextView requestSentIndicator = convertView.findViewById(R.id.request_sent_indicator);
 
-        friendName.setText(friends.get(position));
+        String friend = friends.get(position);
+        friendName.setText(friend);
 
         if (context instanceof FriendsActivity) {
             if (((FriendsActivity) context).header.getText().equals("Friends")) {
-                auraButton.setVisibility(View.VISIBLE);
-                auraButton.setOnClickListener(v -> {
-                    // Handle Aura++ button click
-                    ((FriendsActivity) context).addFriend(friends.get(position));
-                });
+                if (requestedFriends.contains(friend)) {
+                    auraButton.setVisibility(View.GONE);
+                    requestSentIndicator.setVisibility(View.VISIBLE);
+                } else {
+                    auraButton.setVisibility(View.VISIBLE);
+                    requestSentIndicator.setVisibility(View.GONE);
+                    auraButton.setOnClickListener(v -> {
+                        ((FriendsActivity) context).addFriend(friend);
+                    });
+                }
             } else {
                 auraButton.setVisibility(View.GONE);
+                requestSentIndicator.setVisibility(View.GONE);
             }
         }
 
