@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,21 +22,31 @@ public class FriendsActivity extends AppCompatActivity {
     private ListView friendsListView;
     private FriendsAdapter friendsAdapter;
     private TextView header;
+    private EditText searchBar;
     private List<String> friends;
+    private List<String> leaderboard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_friends);
 
+        // Initialize data
         friends = new ArrayList<>();
-        // Add sample data
         friends.add("Maria Eid");
         friends.add("Mira Hussein");
         friends.add("Mariam Sonji");
 
+        leaderboard = new ArrayList<>();
+        leaderboard.add("John Doe");
+        leaderboard.add("Jane Smith");
+        leaderboard.add("Alice Johnson");
+
         header = findViewById(R.id.header);
+        searchBar = findViewById(R.id.search_bar);
         friendsListView = findViewById(R.id.friends_list);
+
+        // Initialize adapter for Friends section
         friendsAdapter = new FriendsAdapter(this, friends);
         friendsListView.setAdapter(friendsAdapter);
 
@@ -62,15 +74,29 @@ public class FriendsActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        // Initialize with Friends section
+        showFriends();
+    }
+    public void addFriend(String friendName) {
+        // Add the friend to your friends list or perform other actions
+        // For now, just show a Toast message
+        Toast.makeText(this, "Added " + friendName + " as a friend!", Toast.LENGTH_SHORT).show();
     }
 
     private void showFriends() {
         header.setText("Friends");
-        // Update the adapter data if needed
+        searchBar.setVisibility(android.view.View.VISIBLE);
+        friendsListView.setVisibility(android.view.View.VISIBLE);
+        friendsAdapter.setFriends(friends);  // Update the adapter data
+        friendsAdapter.notifyDataSetChanged();
     }
 
     private void showLeaderboard() {
         header.setText("Leaderboard");
-        // Update the adapter data to show leaderboard information
+        searchBar.setVisibility(android.view.View.GONE);
+        friendsListView.setVisibility(android.view.View.VISIBLE);
+        friendsAdapter.setFriends(leaderboard);  // Update the adapter data for leaderboard
+        friendsAdapter.notifyDataSetChanged();
     }
 }

@@ -20,6 +20,10 @@ public class FriendsAdapter extends BaseAdapter {
         this.friends = friends;
     }
 
+    public void setFriends(List<String> friends) {
+        this.friends = friends;
+    }
+
     @Override
     public int getCount() {
         return friends.size();
@@ -45,9 +49,16 @@ public class FriendsAdapter extends BaseAdapter {
         Button auraButton = convertView.findViewById(R.id.aura_button);
 
         friendName.setText(friends.get(position));
-        auraButton.setOnClickListener(v -> {
-            // Handle Aura++ button click
-        });
+
+        if (context instanceof FriendsActivity) {
+            auraButton.setVisibility(View.VISIBLE);
+            auraButton.setOnClickListener(v -> {
+                // Handle Aura++ button click
+                ((FriendsActivity) context).addFriend(friends.get(position));
+            });
+        } else {
+            auraButton.setVisibility(View.GONE);
+        }
 
         return convertView;
     }
