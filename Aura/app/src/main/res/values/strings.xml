@@ -67,6 +67,8 @@
         <item>Mini 5</item>
         <item>Mini 6</item>
     </string-array>
+    <string name="btnPicture">Take a pic!</string>
+    <string name="ivPicture">Picture to be submitted for the challenge</string>
 
     //Completed challenge page components
     <string name="tvCongrats">Congratulations!</string>
