@@ -2,25 +2,59 @@ package com.auraXP.aura;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class HelpAccountActivity extends AppCompatActivity {
+
+    private LinearLayout linearLayout2;
+    private EditText firstNameEditText;
+    private EditText lastNameEditText;
+    private EditText emailEditText;
+    private EditText messageEditText;
+    private Button saveChangesButton;
+    private LinearLayout topCardLayout;
+    private TextView textView;
+    private TextView helpAccountHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_help_account);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        // Initialize views
+        linearLayout2 = findViewById(R.id.linearLayout2);
+        firstNameEditText = findViewById(R.id.first_name);
+        lastNameEditText = findViewById(R.id.last_name);
+        emailEditText = findViewById(R.id.email);
+        messageEditText = findViewById(R.id.message);
+        saveChangesButton = findViewById(R.id.save_changes_button);
+        topCardLayout = findViewById(R.id.top_card_layout);
+        textView = findViewById(R.id.textView);
+        helpAccountHeader = findViewById(R.id.help_account_header);
+
+        // Set up any necessary listeners
+        saveChangesButton.setOnClickListener(view -> {
+            // Save changes action
+            saveChanges();
         });
+    }
+
+    private void saveChanges() {
+        // Implement the save changes logic here
+        // You can get the text from the EditTexts and process it as needed
+        String firstName = firstNameEditText.getText().toString();
+        String lastName = lastNameEditText.getText().toString();
+        String email = emailEditText.getText().toString();
+        String message = messageEditText.getText().toString();
+
+        // For example, show a Toast message (you can replace this with actual save logic)
+        Toast.makeText(this, "Changes saved successfully", Toast.LENGTH_SHORT).show();
     }
 }
