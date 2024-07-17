@@ -2,6 +2,7 @@ package com.auraXP.aura;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,5 +19,12 @@ public class ChallengeCompleted extends AppCompatActivity {
 
         Intent intent = getIntent();
         intent.getExtras();
+    }
+
+    public void onClickGoHome(View view) {
+        // Navigate back to DailyChallenges activity and indicate challenge completion
+        Intent intent = new Intent(ChallengeCompleted.this, DailyChallenges.class);
+        intent.putExtra("challengeCompleted", true); // Add extra to indicate challenge completion
+        startActivity(intent);
     }
 }

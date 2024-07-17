@@ -48,6 +48,8 @@
     <string name="btnDailyChallenge">Accept Today\'s Challenge</string>
     <string name="tvMiniChallenges">Mini Challenges:</string>
     <string name="btnSubmitImage">Submit Image</string>
+    <string name="challenge_completed_message">Challenge Completed!</string>
+    <string name="challenge_status_placeholder">Your placeholder text here</string>
 
     //Tutorial page components
     <string name="tutorialTitle">Tutorial</string>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/containerLayout"
@@ -7,6 +8,7 @@
     android:background="@android:color/white"
     tools:ignore="ExtraText">
 
+    <!-- Top card with challenges text -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="130sp"
@@ -26,6 +28,7 @@
             android:textAlignment="center"/>
     </LinearLayout>
 
+    <!-- Layout for accepting daily challenge -->
     <LinearLayout
         android:id="@+id/layoutAcceptDailyChallenge"
         android:layout_width="match_parent"
@@ -45,6 +48,7 @@
             android:onClick="onAcceptDailyChallengeClicked" />
     </LinearLayout>
 
+    <!-- Layout for showing accepted challenge -->
     <LinearLayout
         android:id="@+id/layoutAcceptedChallenge"
         android:layout_width="match_parent"
@@ -99,21 +103,42 @@
             android:layout_gravity="center"
             android:backgroundTint="@color/signUpButtonColor"
             android:text="@string/btnPicture"
-            android:textColor="@color/white"
-            android:onClick="onTakePictureClicked" />
-
-<!--        <Button-->
-<!--            android:id="@+id/btnSubmitImage"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="15dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:backgroundTint="@color/signUpButtonColor"-->
-<!--            android:text="@string/btnSubmitImage"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:visibility="gone" />-->
+            android:textColor="@color/white"/>
     </LinearLayout>
 
+    <!-- Layout for when challenge is completed -->
+    <LinearLayout
+        android:id="@+id/layoutChallengeCompleted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvChallengeCompleted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/challenge_completed_message"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/signUpButtonColor"/>
+
+        <!-- Add any other UI elements specific to completed challenge -->
+    </LinearLayout>
+
+    <!-- TextView for challenge status -->
+    <TextView
+        android:id="@+id/tvChallengeStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/challenge_status_placeholder"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:visibility="gone"/>
 
     <!-- Other UI elements below -->
     <TextView
