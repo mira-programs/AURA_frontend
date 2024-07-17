@@ -2,6 +2,7 @@ package com.auraXP.aura;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.SoundEffectConstants;
 import android.view.View;
@@ -24,7 +25,7 @@ public class ProfileAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_account);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         saveChangesButton = findViewById(R.id.save_changes_button);
         changePasswordButton = findViewById(R.id.change_password_button);
         deleteAccountButton = findViewById(R.id.delete_account_button);

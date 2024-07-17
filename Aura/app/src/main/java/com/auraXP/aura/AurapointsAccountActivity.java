@@ -1,5 +1,6 @@
 package com.auraXP.aura;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.LinearLayout;
@@ -19,7 +20,7 @@ public class AurapointsAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aurapoints_account);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         xpTextView = findViewById(R.id.aura_points_xp);
         levelTextView = findViewById(R.id.aura_points_level);
         nextLevelTextView = findViewById(R.id.aura_points_next_level);
