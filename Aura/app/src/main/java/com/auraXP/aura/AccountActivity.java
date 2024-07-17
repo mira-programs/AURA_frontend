@@ -5,14 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AccountActivity extends AppCompatActivity {
 
     private TextView accountHeader;
-    //private TextView accountUsername;
     private ImageButton profileIcon;
     private ImageButton auraPointsIcon;
     private ImageButton challengesAchievedIcon;
@@ -20,12 +18,8 @@ public class AccountActivity extends AppCompatActivity {
     private Button privacyButton;
     private Button languageButton;
     private Button helpButton;
-   // private Button termsButton;
     private Button aboutButton;
     private Button logoutButton;
-    private ImageButton friendsNav;
-    private ImageView centerNav;
-    private ImageButton accountNav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +28,6 @@ public class AccountActivity extends AppCompatActivity {
 
         // Binding views
         accountHeader = findViewById(R.id.textView);
-//        accountUsername = findViewById(R.id.account_username);
         profileIcon = findViewById(R.id.profile_icon);
         auraPointsIcon = findViewById(R.id.aura_points_icon);
         challengesAchievedIcon = findViewById(R.id.challenges_achieved_icon);
@@ -42,12 +35,8 @@ public class AccountActivity extends AppCompatActivity {
         privacyButton = findViewById(R.id.privacy_button);
         languageButton = findViewById(R.id.language_button);
         helpButton = findViewById(R.id.help_button);
-        //termsButton = findViewById(R.id.terms_button);
         aboutButton = findViewById(R.id.about_button);
         logoutButton = findViewById(R.id.btn_logout);
-//        friendsNav = findViewById(R.id.friends_nav);
-//        centerNav = findViewById(R.id.center_nav);
-//        accountNav = findViewById(R.id.account_nav);
 
         // Setting click listeners
         profileIcon.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +50,7 @@ public class AccountActivity extends AppCompatActivity {
         auraPointsIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (AccountActivity.this, AurapointsAccountActivity.class);
+                Intent intent = new Intent(AccountActivity.this, AurapointsAccountActivity.class);
                 startActivity(intent);
             }
         });
@@ -69,16 +58,15 @@ public class AccountActivity extends AppCompatActivity {
         challengesAchievedIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (AccountActivity.this, ChallengesAccountActivity.class);
+                Intent intent = new Intent(AccountActivity.this, ChallengesAccountActivity.class);
                 startActivity(intent);
             }
         });
 
-
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (AccountActivity.this, SettingsAccountActivity.class);
+                Intent intent = new Intent(AccountActivity.this, SettingsAccountActivity.class);
                 startActivity(intent);
             }
         });
@@ -86,7 +74,7 @@ public class AccountActivity extends AppCompatActivity {
         privacyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (AccountActivity.this, PrivacyAccountActivity.class);
+                Intent intent = new Intent(AccountActivity.this, PrivacyAccountActivity.class);
                 startActivity(intent);
             }
         });
@@ -94,7 +82,7 @@ public class AccountActivity extends AppCompatActivity {
         languageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (AccountActivity.this,LanguageAccountActivity.class);
+                Intent intent = new Intent(AccountActivity.this, LanguageAccountActivity.class);
                 startActivity(intent);
             }
         });
@@ -102,15 +90,14 @@ public class AccountActivity extends AppCompatActivity {
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                // Handle help button click
             }
         });
-
 
         aboutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (AccountActivity.this,AboutAccountActivity.class);
+                Intent intent = new Intent(AccountActivity.this, AboutAccountActivity.class);
                 startActivity(intent);
             }
         });
@@ -118,32 +105,9 @@ public class AccountActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AccountActivity.this, LoginActivity.class); //back to login
+                Intent intent = new Intent(AccountActivity.this, LoginActivity.class);
                 startActivity(intent);
-                finish(); //close activity
-            }
-        });
-
-        friendsNav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent (AccountActivity.this, FriendsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        centerNav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent (AccountActivity.this, DailyChallenges.class);
-                startActivity(intent);
-            }
-        });
-
-        accountNav.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //this is it
+                finish(); // Close activity
             }
         });
     }
