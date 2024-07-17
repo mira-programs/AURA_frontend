@@ -93,7 +93,8 @@ public class AccountActivity extends AppCompatActivity {
         helpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Handle help button click
+                Intent intent = new Intent(AccountActivity.this, HelpAccountActivity.class);
+                startActivity(intent);
             }
         });
 
