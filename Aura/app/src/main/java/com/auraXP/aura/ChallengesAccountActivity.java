@@ -1,10 +1,13 @@
 package com.auraXP.aura;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.auraXP.aura.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.util.ArrayList;
 
 public class ChallengesAccountActivity extends AppCompatActivity {
@@ -17,6 +20,22 @@ public class ChallengesAccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_challenges_account);
 
         listView = findViewById(R.id.listView);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_friends:
+                    startActivity(new Intent(ChallengesAccountActivity.this, FriendsActivity.class));
+                    return true;
+                case R.id.navigation_center:
+                    startActivity(new Intent(ChallengesAccountActivity.this, DailyChallenges.class));
+                    return true;
+                case R.id.navigation_account:
+                    startActivity(new Intent(ChallengesAccountActivity.this, AccountActivity.class));
+                    return true;
+            }
+            return false;
+        });
 
         // Define your Activity class
         class Activity {

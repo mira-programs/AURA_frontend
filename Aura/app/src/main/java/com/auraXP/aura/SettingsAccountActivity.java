@@ -12,6 +12,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class SettingsAccountActivity extends AppCompatActivity {
 
 
@@ -33,7 +35,21 @@ public class SettingsAccountActivity extends AppCompatActivity {
             return insets;
         });
 
-
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_friends:
+                    startActivity(new Intent(SettingsAccountActivity.this, FriendsActivity.class));
+                    return true;
+                case R.id.navigation_center:
+                    startActivity(new Intent(SettingsAccountActivity.this, DailyChallenges.class));
+                    return true;
+                case R.id.navigation_account:
+                    startActivity(new Intent(SettingsAccountActivity.this, AccountActivity.class));
+                    return true;
+            }
+            return false;
+        });
         notificationsButton = findViewById(R.id.notifications_button);
         streaksButton = findViewById(R.id.streaks_button);
         restrictedButton = findViewById(R.id.restricted_button);

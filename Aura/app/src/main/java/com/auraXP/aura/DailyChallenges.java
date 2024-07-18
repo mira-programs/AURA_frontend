@@ -24,6 +24,8 @@ import androidx.core.content.ContextCompat;
 import static android.Manifest.permission.CAMERA;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class DailyChallenges extends AppCompatActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -48,6 +50,22 @@ public class DailyChallenges extends AppCompatActivity {
         setContentView(R.layout.activity_daily_challenges);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_friends:
+                    startActivity(new Intent(DailyChallenges.this, FriendsActivity.class));
+                    return true;
+                case R.id.navigation_center:
+                    startActivity(new Intent(DailyChallenges.this, DailyChallenges.class));
+                    return true;
+                case R.id.navigation_account:
+                    startActivity(new Intent(DailyChallenges.this, AccountActivity.class));
+                    return true;
+            }
+            return false;
+        });
 
         imageView = findViewById(R.id.ivTakenImage);
         btnTakePicture = findViewById(R.id.btnTakePicture);

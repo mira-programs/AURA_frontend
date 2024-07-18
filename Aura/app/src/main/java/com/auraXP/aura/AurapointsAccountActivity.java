@@ -1,5 +1,6 @@
 package com.auraXP.aura;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -8,6 +9,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class AurapointsAccountActivity extends AppCompatActivity {
 
@@ -27,6 +30,22 @@ public class AurapointsAccountActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.aura_points_progress);
         activitiesList = findViewById(R.id.activities_list);
         listView = findViewById(R.id.listViewAuraPoints);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_friends:
+                    startActivity(new Intent(AurapointsAccountActivity.this, FriendsActivity.class));
+                    return true;
+                case R.id.navigation_center:
+                    startActivity(new Intent(AurapointsAccountActivity.this, DailyChallenges.class));
+                    return true;
+                case R.id.navigation_account:
+                    startActivity(new Intent(AurapointsAccountActivity.this, AccountActivity.class));
+                    return true;
+            }
+            return false;
+        });
 
         // Example data - replace with actual data
         int xp = 2330;

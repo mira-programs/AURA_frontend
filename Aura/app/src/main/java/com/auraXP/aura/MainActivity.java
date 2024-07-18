@@ -26,25 +26,7 @@ public class MainActivity extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_FULLSCREEN
                         | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.navigation_friends:
-                        startActivity(new Intent(MainActivity.this, FriendsActivity.class));
-                        return true;
-                    case R.id.navigation_center:
-                        // Handle the center button click
-                        startActivity(new Intent(MainActivity.this, DailyChallenges.class));
-                        return true;
-                    case R.id.navigation_account:
-                        startActivity(new Intent(MainActivity.this, AccountActivity.class));
-                        return true;
-                }
-                return false;
-            }
-        });
+       
     }
 
     public void onClickGoLoginPage(View view) {

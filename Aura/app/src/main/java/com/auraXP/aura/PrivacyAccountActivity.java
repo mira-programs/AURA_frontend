@@ -1,5 +1,6 @@
 package com.auraXP.aura;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.Switch;
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class PrivacyAccountActivity extends AppCompatActivity {
 
@@ -24,6 +27,22 @@ public class PrivacyAccountActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_friends:
+                    startActivity(new Intent(PrivacyAccountActivity.this, FriendsActivity.class));
+                    return true;
+                case R.id.navigation_center:
+                    startActivity(new Intent(PrivacyAccountActivity.this, DailyChallenges.class));
+                    return true;
+                case R.id.navigation_account:
+                    startActivity(new Intent(PrivacyAccountActivity.this, AccountActivity.class));
+                    return true;
+            }
+            return false;
         });
 
         switchh = findViewById(R.id.switch1);

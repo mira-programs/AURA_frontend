@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import java.sql.SQLOutput;
 
 public class ProfileAccountActivity extends AppCompatActivity {
@@ -30,6 +32,22 @@ public class ProfileAccountActivity extends AppCompatActivity {
         changePasswordButton = findViewById(R.id.change_password_button);
         deleteAccountButton = findViewById(R.id.delete_account_button);
         signOutButton = findViewById(R.id.sign_out_button);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.navigation_friends:
+                    startActivity(new Intent(ProfileAccountActivity.this, FriendsActivity.class));
+                    return true;
+                case R.id.navigation_center:
+                    startActivity(new Intent(ProfileAccountActivity.this, DailyChallenges.class));
+                    return true;
+                case R.id.navigation_account:
+                    startActivity(new Intent(ProfileAccountActivity.this, AccountActivity.class));
+                    return true;
+            }
+            return false;
+        });
 
         //listeners
         saveChangesButton.setOnClickListener(new View.OnClickListener() {
