@@ -9,18 +9,16 @@
 
     <Button
         android:id="@+id/streaks_button"
+        style="@style/CustomButtonStyle"
         android:layout_width="315dp"
         android:layout_height="48dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="48dp"
-        android:background="@drawable/button_background"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:text="Streaks"
-        android:textColor="#000000"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/help_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,17 +26,16 @@
 
     <Button
         android:id="@+id/notifications_button"
+        style="@style/CustomButtonStyle"
         android:layout_width="315dp"
         android:layout_height="48dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="54dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/button_background"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:text="Notifications"
-        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/streaks_button"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,16 +44,15 @@
 
     <Button
         android:id="@+id/restricted_button"
+        style="@style/CustomButtonStyle"
         android:layout_width="315dp"
         android:layout_height="48dp"
         android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="48dp"
-        android:background="@drawable/button_background"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:text="Restricted"
-        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,18 +61,16 @@
         app:layout_constraintTop_toBottomOf="@+id/settings_account_header"
         app:layout_constraintVertical_bias="0.356" />
 
-
     <Button
         android:id="@+id/datetime_button"
+        style="@style/CustomButtonStyle"
         android:layout_width="315dp"
         android:layout_height="48dp"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
-        android:background="@drawable/button_background"
         android:drawablePadding="8dp"
         android:gravity="center_vertical"
         android:text="Date and Time"
-        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,6 +125,6 @@
         app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

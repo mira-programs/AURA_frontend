@@ -76,7 +76,6 @@
     </LinearLayout>
 
     <!-- Settings List -->
-
     <LinearLayout
         android:id="@+id/settings_list"
         android:layout_width="match_parent"
@@ -90,57 +89,52 @@
 
         <Button
             android:id="@+id/settings_button"
+            style="@style/CustomButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@drawable/button_background"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="Settings"
-            android:textColor="#000000"
             android:textSize="16sp" />
 
         <Button
             android:id="@+id/privacy_button"
+            style="@style/CustomButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@drawable/button_background"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="Privacy"
-            android:textColor="#000000"
             android:textSize="16sp" />
 
         <Button
             android:id="@+id/language_button"
+            style="@style/CustomButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@drawable/button_background"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="Language"
-            android:textColor="#000000"
             android:textSize="16sp" />
 
         <Button
             android:id="@+id/help_button"
+            style="@style/CustomButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@drawable/button_background"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="Get Help"
-            android:textColor="#000000"
             android:textSize="16sp" />
 
         <Button
             android:id="@+id/about_button"
+            style="@style/CustomButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:background="@drawable/button_background"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
             android:text="About AURA"
-            android:textColor="#000000"
             android:textSize="16sp" />
 
     </LinearLayout>
@@ -196,7 +190,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
-    <Button
+
+
+<Button
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
