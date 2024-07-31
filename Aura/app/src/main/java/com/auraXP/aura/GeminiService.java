@@ -10,6 +10,6 @@ import retrofit2.http.Part;
 
 public interface GeminiService {
     @Multipart
-    @POST("/process-image")
+    @POST("/predict")
     Call<GeminiResponse> processImage(@Part MultipartBody.Part file);
 }

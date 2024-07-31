@@ -36,7 +36,6 @@ public class AccountActivity extends AppCompatActivity {
         challengesAchievedIcon = findViewById(R.id.challenges_achieved_icon);
         settingsButton = findViewById(R.id.settings_button);
         privacyButton = findViewById(R.id.privacy_button);
-        languageButton = findViewById(R.id.language_button);
         helpButton = findViewById(R.id.help_button);
         aboutButton = findViewById(R.id.about_button);
         logoutButton = findViewById(R.id.btn_logout);

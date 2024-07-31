@@ -3,6 +3,7 @@ package com.auraXP.aura;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import androidx.annotation.NonNull;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickGoLoginPage(View view) {
+        Log.d("hi", "hello, world");
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
     }

@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -60,6 +61,8 @@ public class DailyChallenges extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daily_challenges);
+
+        Log.d("DailyChallenges", "Debug log message");
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -182,40 +185,48 @@ public class DailyChallenges extends AppCompatActivity {
         try (FileOutputStream out = new FileOutputStream(file)) {
             capturedImageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
         } catch (IOException e) {
-            e.printStackTrace();
+            Log.e("exception", "i don't even know");
         }
 
         // Prepare the file for upload
-        RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpeg"), file);
+        RequestBody requestFile = RequestBody.create(file, MediaType.parse("image/jpeg"));
         MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
 
         // Create Retrofit client and service
-        Retrofit retrofit = RetrofitClient.getClient("http://<127.0.0.1>:8000");
+        Retrofit retrofit = RetrofitClient.getClient("http://127.0.0.1/8000/predict");
         GeminiService service = retrofit.create(GeminiService.class);
 
         // Make the network request
         Call<GeminiResponse> call = service.processImage(body);
         call.enqueue(new Callback<GeminiResponse>() {
             @Override
-            public void onResponse(Call<GeminiResponse> call, Response<GeminiResponse> response) {
+            public void onResponse(@NonNull Call<GeminiResponse> call, @NonNull Response<GeminiResponse> response) {
                 if (response.isSuccessful()) {
                     GeminiResponse geminiResponse = response.body();
                     if (geminiResponse.getDescription().equalsIgnoreCase("challenge completed")) {
+                        Log.d("GeminiResponse", "Description: " + geminiResponse.getDescription());
+                        Log.d("GeminiResponse", "Confidence: " + geminiResponse.getConfidence());
+
                         // Navigate to ChallengeCompleted activity
                         Intent intent = new Intent(DailyChallenges.this, ChallengeCompleted.class);
                         startActivity(intent);
                     } else {
+                        Log.d("GeminiResponse", "Description not matched.");
+
                         // Navigate to ChallengeFailed activity
                         Intent intent = new Intent(DailyChallenges.this, ChallengeFailed.class);
                         startActivity(intent);
                     }
                 } else {
+                    Log.d("GeminiResponse", "Description: ");
+                    Log.d("GeminiResponse", "Confidence: ");
+
                     Toast.makeText(DailyChallenges.this, "Failed to process image", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
-            public void onFailure(Call<GeminiResponse> call, Throwable t) {
+            public void onFailure(@NonNull Call<GeminiResponse> call, Throwable t) {
                 Toast.makeText(DailyChallenges.this, "Network error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
