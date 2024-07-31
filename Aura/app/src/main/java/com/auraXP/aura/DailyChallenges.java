@@ -190,7 +190,7 @@ public class DailyChallenges extends AppCompatActivity {
         MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
 
         // Create Retrofit client and service
-        Retrofit retrofit = RetrofitClient.getClient("http://<YOUR_SERVER_IP>:8000");
+        Retrofit retrofit = RetrofitClient.getClient("http://<127.0.0.1>:8000");
         GeminiService service = retrofit.create(GeminiService.class);
 
         // Make the network request

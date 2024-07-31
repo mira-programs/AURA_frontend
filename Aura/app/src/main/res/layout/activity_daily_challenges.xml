@@ -98,10 +98,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:layout_gravity="center"
                     android:text="@string/tvFakeChallenge"
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:textColor="@color/signUpButtonColor"
+                    android:textAlignment="center"
                     android:padding="8dp"/>
 
                 <ImageView

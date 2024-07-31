@@ -20,13 +20,14 @@
         app:layout_constraintBottom_toTopOf="@id/profile_icons_row"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintBounds">
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Account"
+            android:text="@string/account"
             android:textColor="@color/white"
             android:textSize="45sp"
             android:textStyle="bold" />
@@ -50,7 +51,7 @@
             android:layout_height="76dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/nothing"
-            android:contentDescription="Profile Icon"
+            android:contentDescription="@string/profile_icon"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_profile_account" />
 
@@ -60,7 +61,7 @@
             android:layout_height="76dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/nothing"
-            android:contentDescription="Aura Points Icon"
+            android:contentDescription="@string/aura_points_icon"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_aurapoints_account" />
 
@@ -70,7 +71,7 @@
             android:layout_height="76dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/nothing"
-            android:contentDescription="Challenges Achieved Icon"
+            android:contentDescription="@string/challenges_achieved_icon"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_challengesachieved_account" />
     </LinearLayout>
@@ -94,8 +95,10 @@
             android:layout_height="48dp"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="Settings"
-            android:textSize="16sp" />
+            android:text="@string/settings"
+            android:textColor="#5D4037"
+            android:textSize="16sp"
+            tools:ignore="VisualLintButtonSize" />
 
         <Button
             android:id="@+id/privacy_button"
@@ -104,18 +107,10 @@
             android:layout_height="48dp"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="Privacy"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/language_button"
-            style="@style/CustomButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:drawablePadding="8dp"
-            android:gravity="center_vertical"
-            android:text="Language"
-            android:textSize="16sp" />
+            android:text="@string/privacy"
+            android:textColor="#5D4037"
+            android:textSize="16sp"
+            tools:ignore="VisualLintButtonSize" />
 
         <Button
             android:id="@+id/help_button"
@@ -124,8 +119,10 @@
             android:layout_height="48dp"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="Get Help"
-            android:textSize="16sp" />
+            android:text="@string/get_help"
+            android:textColor="#5D4037"
+            android:textSize="16sp"
+            tools:ignore="VisualLintButtonSize" />
 
         <Button
             android:id="@+id/about_button"
@@ -134,8 +131,10 @@
             android:layout_height="48dp"
             android:drawablePadding="8dp"
             android:gravity="center_vertical"
-            android:text="About AURA"
-            android:textSize="16sp" />
+            android:text="@string/about_aura"
+            android:textColor="#5D4037"
+            android:textSize="16sp"
+            tools:ignore="VisualLintButtonSize" />
 
     </LinearLayout>
 
@@ -144,7 +143,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:text="Profile"
+        android:text="@string/profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.013"
@@ -157,7 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:text="Aura points"
+        android:text="@string/aura_points"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.301"
@@ -170,7 +169,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:text="Challenges Achieved"
+        android:text="@string/challenges_achieved"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.796"
@@ -188,9 +187,8 @@
         app:menu="@menu/bottom_nav_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintBottomNav" />
 
 <Button
         android:id="@+id/btn_logout"
@@ -199,7 +197,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="18dp"
         android:backgroundTint="@color/signUpButtonColor"
-        android:text="Log Out"
+        android:text="@string/log_out"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -207,6 +205,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_list"
-        app:layout_constraintVertical_bias="0.019" />
+        app:layout_constraintVertical_bias="0.019"
+    tools:ignore="VisualLintButtonSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
