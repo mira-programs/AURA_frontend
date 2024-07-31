@@ -26,6 +26,18 @@ import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+
 public class DailyChallenges extends AppCompatActivity {
 
     private static final int REQUEST_IMAGE_CAPTURE = 1;
@@ -151,10 +163,7 @@ public class DailyChallenges extends AppCompatActivity {
             btnTakePicture.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(DailyChallenges.this, "Image Submitted", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(DailyChallenges.this, ChallengeCompleted.class);
-                    intent.putExtra("capturedImageBitmap", capturedImageBitmap);
-                    startActivity(intent);
+                    submitImageToGemini();
                 }
             });
         } else {
@@ -165,6 +174,51 @@ public class DailyChallenges extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void submitImageToGemini() {
+        // Convert Bitmap to File
+        File file = new File(getExternalFilesDir(null), "temp.jpg");
+        try (FileOutputStream out = new FileOutputStream(file)) {
+            capturedImageBitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Prepare the file for upload
+        RequestBody requestFile = RequestBody.create(MediaType.parse("image/jpeg"), file);
+        MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
+
+        // Create Retrofit client and service
+        Retrofit retrofit = RetrofitClient.getClient("http://<YOUR_SERVER_IP>:8000");
+        GeminiService service = retrofit.create(GeminiService.class);
+
+        // Make the network request
+        Call<GeminiResponse> call = service.processImage(body);
+        call.enqueue(new Callback<GeminiResponse>() {
+            @Override
+            public void onResponse(Call<GeminiResponse> call, Response<GeminiResponse> response) {
+                if (response.isSuccessful()) {
+                    GeminiResponse geminiResponse = response.body();
+                    if (geminiResponse.getDescription().equalsIgnoreCase("challenge completed")) {
+                        // Navigate to ChallengeCompleted activity
+                        Intent intent = new Intent(DailyChallenges.this, ChallengeCompleted.class);
+                        startActivity(intent);
+                    } else {
+                        // Navigate to ChallengeFailed activity
+                        Intent intent = new Intent(DailyChallenges.this, ChallengeFailed.class);
+                        startActivity(intent);
+                    }
+                } else {
+                    Toast.makeText(DailyChallenges.this, "Failed to process image", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<GeminiResponse> call, Throwable t) {
+                Toast.makeText(DailyChallenges.this, "Network error: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void onAcceptDailyChallengeClicked(View view) {
@@ -190,7 +244,7 @@ public class DailyChallenges extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState( Bundle savedInstanceState) {
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
 
         // Save the current layout visibility state

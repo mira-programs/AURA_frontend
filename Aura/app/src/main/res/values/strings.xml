@@ -79,4 +79,14 @@
     <string name="btnSurprise">Surprise challenge</string>
     <string name="btnBackHome">Back Home</string>
 
+    //Failed Challenge page components
+    <string name="tvOops">Oops!</string>
+    <string name="tvFailed">Challenge Failed!</string>
+    <string name="delete_account">Delete account</string>
+    <string name="change_password">Change password</string>
+    <string name="save_changes">Save changes</string>
+    <string name="phone_number">Phone number</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="e_mail">E-mail</string>
 </resources>
