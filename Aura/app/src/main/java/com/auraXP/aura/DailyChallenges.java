@@ -179,7 +179,7 @@ public class DailyChallenges extends AppCompatActivity {
         RequestBody requestFile = RequestBody.create(file, MediaType.parse("image/jpeg"));
         MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
 
-        // Create RequestBody for the description
+        // Create RequestBody for the description (if needed)
         RequestBody descriptionBody = RequestBody.create("Describe your challenge here", MediaType.parse("text/plain"));
 
         GeminiService service = ApiServiceInstance.getGeminiService();
