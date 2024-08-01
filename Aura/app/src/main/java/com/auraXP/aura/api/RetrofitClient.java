@@ -1,4 +1,4 @@
-package com.auraXP.aura;
+package com.auraXP.aura.api;
 
 import android.util.Log;
 import retrofit2.Retrofit;

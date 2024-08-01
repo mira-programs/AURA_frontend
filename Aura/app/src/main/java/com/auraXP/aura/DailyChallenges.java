@@ -23,6 +23,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.auraXP.aura.api.ApiService;
+import com.auraXP.aura.api.ApiServiceInstance;
+import com.auraXP.aura.api.GeminiResponse;
+import com.auraXP.aura.api.GeminiService;
 import com.auraXP.aura.api.models.Challenge;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -37,7 +40,6 @@ import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 import static android.Manifest.permission.CAMERA;
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
@@ -173,29 +175,25 @@ public class DailyChallenges extends AppCompatActivity {
             return;
         }
 
+        // Create RequestBody for the image file
         RequestBody requestFile = RequestBody.create(file, MediaType.parse("image/jpeg"));
         MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
 
-        Log.d("hakuna matata", "${body.toString()}");
+        // Create RequestBody for the description
+        RequestBody descriptionBody = RequestBody.create("Describe your challenge here", MediaType.parse("text/plain"));
 
         GeminiService service = ApiServiceInstance.getGeminiService();
+        Call<GeminiResponse> call = service.processImage(body, descriptionBody);
 
-        Log.d("slay girl", "${service.toString()}");
-
-        Call<GeminiResponse> call = service.processImage(body);
-        Log.d("yay", "got to this point");
         call.enqueue(new Callback<GeminiResponse>() {
             @Override
             public void onResponse(@NonNull Call<GeminiResponse> call, @NonNull Response<GeminiResponse> response) {
                 if (response.isSuccessful()) {
                     GeminiResponse geminiResponse = response.body();
-                    if (geminiResponse.getDescription().equalsIgnoreCase("challenge completed")) {
-                        Log.d("GeminiResponse", "Description: " + geminiResponse.getDescription());
-                        Log.d("GeminiResponse", "Confidence: " + geminiResponse.getConfidence());
+                    if (geminiResponse != null && geminiResponse.getDescription().equalsIgnoreCase("challenge completed")) {
                         Intent intent = new Intent(DailyChallenges.this, ChallengeCompleted.class);
                         startActivity(intent);
                     } else {
-                        Log.d("GeminiResponse", "Description not matched.");
                         Intent intent = new Intent(DailyChallenges.this, ChallengeFailed.class);
                         startActivity(intent);
                     }

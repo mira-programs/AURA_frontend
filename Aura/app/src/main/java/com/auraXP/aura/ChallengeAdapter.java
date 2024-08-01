@@ -15,28 +15,39 @@ import java.util.List;
 
 public class ChallengeAdapter extends ArrayAdapter<Challenge> {
 
-    public ChallengeAdapter(Context context, List<Challenge> challenges) {
-        super(context, 0, challenges);
+    // ViewHolder class to hold views for recycling
+    private static class ViewHolder {
+        TextView tvDescription;
+        TextView tvPoints;
+    }
+
+    public ChallengeAdapter(@NonNull Context context, @NonNull List<Challenge> objects) {
+        super(context, 0, objects);
     }
 
     @NonNull
+    @Override
     public View getView(int position, @NonNull View convertView, @NonNull ViewGroup parent) {
+        ViewHolder viewHolder;
+
+        // Check if an existing view is being reused, otherwise inflate the view
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_challenge, parent, false);
+
+            // Create a new ViewHolder and store references to the views
+            viewHolder = new ViewHolder();
+            viewHolder.tvDescription = convertView.findViewById(R.id.tvChallengeDescription);
+            viewHolder.tvPoints = convertView.findViewById(R.id.tvChallengePoints);
+
+            // Store the ViewHolder with the view
+            convertView.setTag(viewHolder);
+
         // Get the data item for this position
         Challenge challenge = getItem(position);
 
-        // Check if an existing view is being reused, otherwise inflate the view
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_challenge, parent, false);
-        }
-
-        // Lookup view for data population
-        TextView tvDescription = convertView.findViewById(R.id.tvChallengeDescription);
-        TextView tvPoints = convertView.findViewById(R.id.tvChallengePoints);
-
         // Populate the data into the template view using the data object
         if (challenge != null) {
-            tvDescription.setText(challenge.getDescription());
-            tvPoints.setText(String.valueOf(challenge.getPoints()));
+            viewHolder.tvDescription.setText(challenge.getDescription());
+            viewHolder.tvPoints.setText(String.valueOf(challenge.getPoints()));
         }
 
         // Return the completed view to render on screen

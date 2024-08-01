@@ -1,4 +1,4 @@
-package com.auraXP.aura;
+package com.auraXP.aura.api;
 
 public class GeminiResponse {
     private String description;

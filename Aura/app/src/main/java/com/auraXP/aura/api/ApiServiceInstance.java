@@ -1,7 +1,4 @@
-package com.auraXP.aura;
-
-import com.auraXP.aura.GeminiService;
-import com.auraXP.aura.api.ApiService;
+package com.auraXP.aura.api;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
