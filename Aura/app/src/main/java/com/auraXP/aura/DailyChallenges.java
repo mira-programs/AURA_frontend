@@ -179,7 +179,7 @@ public class DailyChallenges extends AppCompatActivity {
         RequestBody requestFile = RequestBody.create(file, MediaType.parse("image/jpeg"));
         MultipartBody.Part body = MultipartBody.Part.createFormData("file", file.getName(), requestFile);
 
-        // Create RequestBody for the description (if needed)
+        // Create RequestBody for the description
         RequestBody descriptionBody = RequestBody.create("Describe your challenge here", MediaType.parse("text/plain"));
 
         GeminiService service = ApiServiceInstance.getGeminiService();
@@ -198,7 +198,7 @@ public class DailyChallenges extends AppCompatActivity {
                         startActivity(intent);
                     }
                 } else {
-                    Toast.makeText(DailyChallenges.this, "Failed to process image", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DailyChallenges.this, "Failed to process image: " + response.message(), Toast.LENGTH_SHORT).show();
                 }
             }
 
