@@ -21,4 +21,5 @@
 
     <color name="icon_bg">#C8475D</color>
     <color name="icon_border">#A83460</color>
+    <color name="pinkText">#C8475D</color>
 </resources>
