@@ -34,7 +34,7 @@
     </LinearLayout>
 
     <!-- Profile Icons Row -->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/profile_icons_row"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,34 +47,72 @@
 
         <ImageButton
             android:id="@+id/profile_icon"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/nothing"
             android:contentDescription="@string/profile_icon"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_profile_account" />
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:padding="16dp"
+            android:src="@drawable/profile_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/aura_points_icon"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/profileText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile"
+            app:layout_constraintStart_toStartOf="@id/profile_icon"
+            app:layout_constraintEnd_toEndOf="@id/profile_icon"
+            app:layout_constraintTop_toBottomOf="@id/profile_icon" />
 
         <ImageButton
             android:id="@+id/aura_points_icon"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/nothing"
             android:contentDescription="@string/aura_points_icon"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_aurapoints_account" />
+            android:scaleType="centerInside"
+            android:padding="12dp"
+            android:src="@drawable/aura_points_icon"
+            app:layout_constraintStart_toEndOf="@id/profile_icon"
+            app:layout_constraintEnd_toStartOf="@id/challenges_achieved_icon"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/auraPointsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aura_points"
+            app:layout_constraintStart_toStartOf="@id/aura_points_icon"
+            app:layout_constraintEnd_toEndOf="@id/aura_points_icon"
+            app:layout_constraintTop_toBottomOf="@id/aura_points_icon"/>
 
         <ImageButton
             android:id="@+id/challenges_achieved_icon"
-            android:layout_width="76dp"
-            android:layout_height="76dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="@drawable/nothing"
+            android:padding="12dp"
             android:contentDescription="@string/challenges_achieved_icon"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_challengesachieved_account" />
-    </LinearLayout>
+            android:scaleType="centerInside"
+            android:src="@drawable/achieved_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/aura_points_icon"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/challengesAchievedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/challenges_achieved"
+            app:layout_constraintStart_toStartOf="@id/challenges_achieved_icon"
+            app:layout_constraintEnd_toEndOf="@id/challenges_achieved_icon"
+            app:layout_constraintTop_toBottomOf="@id/challenges_achieved_icon"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Settings List -->
     <LinearLayout
@@ -138,57 +176,7 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/profileText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:text="@string/profile"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.013"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_icons_row"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/auraPointsText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:text="@string/aura_points"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.301"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_icons_row"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/challengesAchievedText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:text="@string/challenges_achieved"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.796"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_icons_row"
-        app:layout_constraintVertical_bias="0.0" />
-
     <!-- Bottom Navigation -->
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@color/signUpButtonColor"
-        app:menu="@menu/bottom_nav_menu"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="VisualLintBottomNav" />
 
 <Button
         android:id="@+id/btn_logout"
@@ -200,12 +188,24 @@
         android:text="@string/log_out"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings_list"
         app:layout_constraintVertical_bias="0.019"
     tools:ignore="VisualLintButtonSize" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@color/signUpButtonColor"
+        app:menu="@menu/bottom_nav_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="VisualLintBottomNav" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

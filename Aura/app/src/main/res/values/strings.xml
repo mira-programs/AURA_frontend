@@ -102,4 +102,6 @@
     <string name="challenges_achieved">Challenges Achieved</string>
     <string name="log_out">Log Out</string>
     <string name="sign_out">Sign out</string>
+    <string name="account_name">Account</string>
+    <string name="challenges_achieved_text">Challenges Achieved</string>
 </resources>
