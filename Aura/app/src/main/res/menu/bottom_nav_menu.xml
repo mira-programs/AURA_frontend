@@ -2,13 +2,13 @@
     <item
         android:id="@+id/navigation_friends"
         android:icon="@drawable/ic_friends"
-        android:title="Friends" />
+        android:title="@string/friends" />
     <item
         android:id="@+id/navigation_center"
         android:icon="@drawable/ic_center"
-        android:title="" />
+        android:title="@string/home" />
     <item
         android:id="@+id/navigation_account"
         android:icon="@drawable/ic_account"
-        android:title="Account" />
+        android:title="@string/account" />
 </menu>

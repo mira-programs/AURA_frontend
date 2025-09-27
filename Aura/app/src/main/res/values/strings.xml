@@ -98,10 +98,12 @@
     <string name="aura_points_icon">Aura Points Icon</string>
     <string name="profile_icon">Profile Icon</string>
     <string name="account">Account</string>
-    <string name="aura_points">Aura points</string>
-    <string name="challenges_achieved">Challenges Achieved</string>
-    <string name="log_out">Log Out</string>
+    <string name="aura_points">Aura Points</string>
+    <string name="challenges_achieved">Challenges \nAchieved</string>
+    <string name="log_out">Log out</string>
     <string name="sign_out">Sign out</string>
     <string name="account_name">Account</string>
     <string name="challenges_achieved_text">Challenges Achieved</string>
+    <string name="friends">Friends</string>
+    <string name="home">Home</string>
 </resources>

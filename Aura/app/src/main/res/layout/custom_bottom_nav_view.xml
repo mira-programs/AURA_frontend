@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+
+    <View
+        android:id="@+id/background_half_circle"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center|bottom"
+        android:background="@drawable/bottom_nav_half_circle" />
+
+    <ImageButton
+        android:id="@+id/nav_friends"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="start|bottom"
+        android:layout_marginStart="40dp"
+        android:background="@null"
+        android:src="@drawable/ic_friends"
+        android:contentDescription="@string/friends" />
+
+    <ImageButton
+        android:id="@+id/nav_center"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:src="@drawable/ic_center"
+        android:contentDescription="@string/home" />
+
+    <ImageButton
+        android:id="@+id/nav_account"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="40dp"
+        android:background="@null"
+        android:src="@drawable/ic_account"
+        android:contentDescription="@string/account" />
+
+</FrameLayout>
